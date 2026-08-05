@@ -216,3 +216,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# SagaRoutes local and private data
+.env
+data/private/
+data/uploads/
+media/
+staticfiles/
+db.sqlite3
