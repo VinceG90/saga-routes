@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1.0",
+  "work_id": "gunnlaug",
+  "alignment_method": "manual",
+  "description": "Provisional passage-level alignments between the normalized Old Norse text and the Morris-Magnusson English translation.",
+  "alignments": [
+    {
+      "id": "gunnlaug-a0001",
+      "old_norse_passage_ids": [
+        "gunnlaug-on-c02-p001"
+      ],
+      "english_passage_ids": [
+        "gunnlaug-en-c02-p001"
+      ],
+      "cardinality": "one_to_one",
+      "coverage": "substantially_equivalent",
+      "confidence": "high",
+      "review_status": "provisional",
+      "editorial_note": "Both passages introduce the arrival of Bergfinn's ship at Gufuaros and identify Bergfinn as its Norwegian master."
+    },
+    {
+      "id": "gunnlaug-a0002",
+      "old_norse_passage_ids": [
+        "gunnlaug-on-c02-p002"
+      ],
+      "english_passage_ids": [
+        "gunnlaug-en-c02-p002"
+      ],
+      "cardinality": "one_to_one",
+      "coverage": "substantially_equivalent",
+      "confidence": "high",
+      "review_status": "provisional",
+      "editorial_note": "Both passages describe Thorstein's visit to the ship, Bergfinn's winter lodging, and Bergfinn's interest in dreams."
+    },
+    {
+      "id": "gunnlaug-a0003",
+      "old_norse_passage_ids": [
+        "gunnlaug-on-c02-p003"
+      ],
+      "english_passage_ids": [
+        "gunnlaug-en-c02-p003"
+      ],
+      "cardinality": "one_to_one",
+      "coverage": "substantially_equivalent",
+      "confidence": "high",
+      "review_status": "provisional",
+      "editorial_note": "Both passages describe the spring journey toward the Thing site, the stop at Grenjar or Foxholes, and the repair of Thorstein's booth walls."
+    }
+  ]
+}
