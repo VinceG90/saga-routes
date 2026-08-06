@@ -1,0 +1,81 @@
+{
+  "type": "FeatureCollection",
+  "name": "SagaRoutes: Gunnlaugs saga places",
+  "schema_version": "0.1.0",
+  "work_id": "gunnlaug",
+  "source_files": {
+    "places": "data/gunnlaug/curated/places.json",
+    "place_mentions": "data/gunnlaug/curated/place_mentions.json",
+    "passages": "data/gunnlaug/curated/passages.json"
+  },
+  "feature_count": 1,
+  "features": [
+    {
+      "type": "Feature",
+      "id": "gunnlaug-place-borg-a-myrum",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -21.915145,
+          64.561782
+        ]
+      },
+      "properties": {
+        "place_id": "gunnlaug-place-borg-a-myrum",
+        "preferred_name": "Borg á Mýrum",
+        "alternate_names": [
+          "Borg",
+          "Burg"
+        ],
+        "feature_type": "farmstead",
+        "associated_site_type": null,
+        "country_code": "IS",
+        "broader_region": "Borgarfjörður, western Iceland",
+        "identification_status": "identified",
+        "spatial_certainty": "high",
+        "coordinate_source_id": "geo-source-west-is-borg",
+        "authority_ids": {},
+        "editorial_note": "The saga residence called Borg or Burg is identified with the extant historic farm and church site Borg á Mýrum. The coordinates represent the modern site and do not claim to identify the exact position of every medieval structure.",
+        "mention_count": 2,
+        "mentions": [
+          {
+            "mention_id": "gunnlaug-pm0002",
+            "passage_id": "gunnlaug-en-c01-p001",
+            "alignment_id": null,
+            "language_code": "en",
+            "surface_form": "Burg",
+            "mention_role": "residence",
+            "visit_status": "present",
+            "character_names": [
+              "Thorstein Egilson"
+            ],
+            "chapter_number": 1,
+            "chapter_title": "Of Thorstein Egilson and his Kin",
+            "passage_type": "prose",
+            "sequence_in_document": 1,
+            "text": "There was a man called Thorstein, the son of Egil, the son of Skallagrim, the son of Kveldulf the Hersir of Norway. Asgerd was the mother of Thorstein; she was the daughter of Biorn Hold. Thorstein dwelt at Burg in Burgfirth; he was rich of fee, and a great chief, a wise man, meek and of measure in all wise. He was nought of such wondrous growth and strength as his father Egil had been; yet was he a right mighty man, and much beloved of all folk.",
+            "editorial_note": "The Morris-Magnusson translation renders Borg as Burg."
+          },
+          {
+            "mention_id": "gunnlaug-pm0001",
+            "passage_id": "gunnlaug-on-c01-p002",
+            "alignment_id": null,
+            "language_code": "on",
+            "surface_form": "Borg",
+            "mention_role": "residence",
+            "visit_status": "present",
+            "character_names": [
+              "Þorsteinn Egilsson"
+            ],
+            "chapter_number": 1,
+            "chapter_title": "Frá Þorsteini Egilssyni",
+            "passage_type": "prose",
+            "sequence_in_document": 2,
+            "text": "Þorsteinn bjó at Borg í Borgarfirði. Hann var auðigr at fé ok höfðingi mikill, vitr maðr ok hógværr ok hófsmaðr um alla hluti. Engi var hann afreksmaðr um vöxt eða afl sem Egill, faðir hans, en þó var hann it mesta afarmenni ok vinsæll af allri alþýðu. Þorsteinn var vænn maðr, hvítr á hár ok eygr manna bezt. Hann átti Jófríði Gunnarsdóttur, Hlífarsonar. Hana hafði átt fyrr Þóroddr, sonr Tungu-Odds, ok var þeira dóttir Húngerðr, er þar fæddist upp at Borg með Þorsteini. Jófríðr var skörungr mikill.",
+            "editorial_note": "The Old Norse text identifies Borg as Þorsteinn's dwelling."
+          }
+        ]
+      }
+    }
+  ]
+}

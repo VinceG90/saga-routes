@@ -1,0 +1,123 @@
+{
+  "schema_version": "0.1.0",
+  "work_id": "gunnlaug",
+  "description": "Saga places retained without map geometry because their precise historic locations remain unresolved or insufficiently supported.",
+  "place_count": 2,
+  "places": [
+    {
+      "id": "gunnlaug-place-gufuaros",
+      "preferred_name": "Gufuárós",
+      "alternate_names": [
+        "Gufuaros",
+        "Gufaros",
+        "mouth of the Gufuá"
+      ],
+      "feature_type": "harbor_or_river_mouth",
+      "country_code": "IS",
+      "broader_region": "Borgarfjörður, western Iceland",
+      "identification_status": "probable",
+      "spatial_certainty": "low",
+      "geometry": null,
+      "coordinate_source_id": null,
+      "authority_ids": {},
+      "editorial_note": "The saga identifies Gufuárós as the place where Bergfinn's ship arrived. The name indicates the mouth of the Gufuá, but an exact historically supportable coordinate has not yet been selected. No point should be displayed until the historic shoreline and place identification are reviewed.",
+      "mention_count": 2,
+      "mentions": [
+        {
+          "mention_id": "gunnlaug-pm0004",
+          "passage_id": "gunnlaug-en-c02-p001",
+          "alignment_id": "gunnlaug-a0001",
+          "language_code": "en",
+          "surface_form": "Gufaros",
+          "mention_role": "arrival_location",
+          "visit_status": "arrived",
+          "character_names": [
+            "Bergfinn"
+          ],
+          "chapter_number": 2,
+          "chapter_title": "Of Thorstein's Dream",
+          "passage_type": "prose",
+          "sequence_in_document": 4,
+          "text": "One summer, it is said, a ship came from over the main into Gufaros. Bergfinn was he hight who was the master thereof, a Northman of kin, rich in goods, and somewhat stricken in years, and a wise man he was withal.",
+          "editorial_note": "The English translation uses the form Gufaros."
+        },
+        {
+          "mention_id": "gunnlaug-pm0003",
+          "passage_id": "gunnlaug-on-c02-p001",
+          "alignment_id": "gunnlaug-a0001",
+          "language_code": "on",
+          "surface_form": "Gufuárós",
+          "mention_role": "arrival_location",
+          "visit_status": "arrived",
+          "character_names": [
+            "Bergfinnr"
+          ],
+          "chapter_number": 2,
+          "chapter_title": "Draumr Þorsteins Egilssonar.",
+          "passage_type": "prose",
+          "sequence_in_document": 4,
+          "text": "Eitt sumar, er þat sagt, at skip kom af hafi í Gufuárósi. Bergfinnr er nefndr stýrimaðr fyrir skipinu, norrænn at ætt, auðigr at fé ok heldr við aldr. Hann var vitr maðr.",
+          "editorial_note": "The passage states that a ship arriving from overseas entered Gufuárós."
+        }
+      ]
+    },
+    {
+      "id": "gunnlaug-place-valfell",
+      "preferred_name": "Valfell",
+      "alternate_names": [
+        "Hawkfell"
+      ],
+      "feature_type": "landform",
+      "associated_site_type": "assembly_site",
+      "country_code": "IS",
+      "broader_region": "Borgarfjörður, western Iceland",
+      "identification_status": "unresolved",
+      "spatial_certainty": "low",
+      "geometry": null,
+      "coordinate_source_id": null,
+      "authority_ids": {},
+      "editorial_note": "The Old Norse text locates the Borgfirðingar assembly site under Valfell. The Morris-Magnusson translation renders the name as Hawkfell. An exact modern landform and coordinate have not yet been verified.",
+      "mention_count": 2,
+      "mentions": [
+        {
+          "mention_id": "gunnlaug-pm0006",
+          "passage_id": "gunnlaug-en-c02-p003",
+          "alignment_id": "gunnlaug-a0003",
+          "language_code": "en",
+          "surface_form": "Hawkfell",
+          "mention_role": "destination",
+          "visit_status": "visited",
+          "character_names": [
+            "Thorstein Egilson",
+            "Bergfinn"
+          ],
+          "chapter_number": 2,
+          "chapter_title": "Of Thorstein's Dream",
+          "passage_type": "prose",
+          "sequence_in_document": 6,
+          "text": "One day in spring-tide Thorstein asked Bergfinn if he would ride with him up to Hawkfell, where at that time was the Thing-stead of the Burg-firthers; for Thorstein had been told that the walls of his booth had fallen in. The Eastman said he had good will to go, so that day they rode, some three together, from home, and the house-carles of Thorstein withal, till they came up under Hawkfell to a farmstead called Foxholes. There dwelt a man of small wealth called Atli, who was Thorstein's tenant. Thorstein bade him come and work with them, and bring with him hoe and spade. This he did, and when they came to the tofts of the booth, they set to work all of them, and did out the walls.",
+          "editorial_note": "The translation renders Valfell semantically as Hawkfell."
+        },
+        {
+          "mention_id": "gunnlaug-pm0005",
+          "passage_id": "gunnlaug-on-c02-p003",
+          "alignment_id": "gunnlaug-a0003",
+          "language_code": "on",
+          "surface_form": "Valfell",
+          "mention_role": "destination",
+          "visit_status": "visited",
+          "character_names": [
+            "Þorsteinn Egilsson",
+            "Bergfinnr"
+          ],
+          "chapter_number": 2,
+          "chapter_title": "Draumr Þorsteins Egilssonar.",
+          "passage_type": "prose",
+          "sequence_in_document": 6,
+          "text": "Um várit einn dag ræddi Þorsteinn um við Bergfinn, ef hann vildi ríða með honum upp undir Valfell. Þar var þá þingstöð þeira Borgfirðinga. En Þorsteini var sagt, at fallnir væri búðarveggir hans. Austmaðrinn kveðst þat vilja, ok riðu þeir heiman of daginn þrír saman ok húskarl Þorsteins, þar til er þeir koma til bæjar þess, er at Grenjum heitir. Þar bjó einn maðr félítill, er Atli hét. Hann var landseti Þorsteins, ok beiddi Þorsteinn Atla, at hann færi til starfs með þeim ok hefði pál ok reku. Hann gerði svá. Ok er þeir koma upp undir Valfell til búðartóftanna, þá tóku þeir til starfs allir ok færðu út veggina. Veðrit var heitt af sólu, ok varð þeim Þorsteini ok Austmanni erfitt.",
+          "editorial_note": "The party travels from Þorsteinn's home toward Valfell, where the Borgfirðingar assembly site was located."
+        }
+      ]
+    }
+  ]
+}
