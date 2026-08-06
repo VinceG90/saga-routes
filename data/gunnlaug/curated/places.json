@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.1.0",
+  "work_id": "gunnlaug",
+  "description": "Normalized geographic entities associated with the initial Gunnlaugs saga prototype.",
+  "places": [
+    {
+      "id": "gunnlaug-place-borg-a-myrum",
+      "preferred_name": "Borg á Mýrum",
+      "alternate_names": [
+        "Borg",
+        "Burg"
+      ],
+      "feature_type": "farmstead",
+      "country_code": "IS",
+      "broader_region": "Borgarfjörður, western Iceland",
+      "identification_status": "identified",
+      "spatial_certainty": "high",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -21.915145,
+          64.561782
+        ]
+      },
+      "coordinate_source_id": "geo-source-west-is-borg",
+      "authority_ids": {},
+      "editorial_note": "The saga residence called Borg or Burg is identified with the extant historic farm and church site Borg á Mýrum. The coordinates represent the modern site and do not claim to identify the exact position of every medieval structure."
+    },
+    {
+      "id": "gunnlaug-place-gufuaros",
+      "preferred_name": "Gufuárós",
+      "alternate_names": [
+        "Gufuaros",
+        "Gufaros",
+        "mouth of the Gufuá"
+      ],
+      "feature_type": "harbor_or_river_mouth",
+      "country_code": "IS",
+      "broader_region": "Borgarfjörður, western Iceland",
+      "identification_status": "probable",
+      "spatial_certainty": "low",
+      "geometry": null,
+      "coordinate_source_id": null,
+      "authority_ids": {},
+      "editorial_note": "The saga identifies Gufuárós as the place where Bergfinn's ship arrived. The name indicates the mouth of the Gufuá, but an exact historically supportable coordinate has not yet been selected. No point should be displayed until the historic shoreline and place identification are reviewed."
+    },
+    {
+      "id": "gunnlaug-place-valfell",
+      "preferred_name": "Valfell",
+      "alternate_names": [
+        "Hawkfell"
+      ],
+      "feature_type": "landform",
+      "associated_site_type": "assembly_site",
+      "country_code": "IS",
+      "broader_region": "Borgarfjörður, western Iceland",
+      "identification_status": "unresolved",
+      "spatial_certainty": "low",
+      "geometry": null,
+      "coordinate_source_id": null,
+      "authority_ids": {},
+      "editorial_note": "The Old Norse text locates the Borgfirðingar assembly site under Valfell. The Morris-Magnusson translation renders the name as Hawkfell. An exact modern landform and coordinate have not yet been verified."
+    }
+  ]
+}

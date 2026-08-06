@@ -120,3 +120,29 @@ SagaRoutes software is licensed separately from its source texts and research da
 5. A public-domain translation may differ significantly from current scholarly translations.
 6. Neither text should be treated as a manuscript facsimile or diplomatic transcription.
 7. Geographic names in translation may represent editorial interpretation rather than direct transliteration.
+
+
+## Geographic Source 001: Borg á Mýrum
+
+- **Source ID:** `geo-source-west-is-borg`
+- **Resource:** Borg á Mýrum
+- **Publisher:** West Iceland
+- **Resource type:** Regional cultural and visitor-information site
+- **URL:** https://www.west.is/is/thjonusta/saga-og-menning/borg-a-myrum
+- **Date accessed:** 2026-08-06
+- **Coordinates supplied by source:** N 64° 33' 42.415", W 21° 54' 54.523"
+- **Decimal coordinates used by SagaRoutes:** 64.561782, -21.915145
+- **Intended use:** Location of the extant Borg á Mýrum farm and church site
+- **Reliability note:** Suitable for locating the modern historic site. These coordinates do not establish the precise location or extent of medieval buildings.
+
+## Geographic Reference 002: Icelandic Saga Map
+
+- **Source ID:** `geo-reference-icelandic-saga-map`
+- **Resource:** Icelandic Saga Map
+- **Institutional context:** University of Iceland and associated project partners
+- **URL:** https://sagamap.hi.is/
+- **Date accessed:** 2026-08-06
+- **Resource type:** Scholarly digital map and discovery resource
+- **Intended use:** Discovery of candidate saga-place identifications and comparison with prior digital mapping
+- **Reliability note:** The project describes its map as a beta version and warns that its geographic data has not been fully checked. Candidate coordinates must therefore be independently reviewed before adoption by SagaRoutes.
+

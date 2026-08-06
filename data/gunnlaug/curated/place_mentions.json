@@ -1,0 +1,99 @@
+{
+  "schema_version": "0.1.0",
+  "work_id": "gunnlaug",
+  "description": "Textual references connecting saga passages to normalized geographic entities.",
+  "mentions": [
+    {
+      "id": "gunnlaug-pm0001",
+      "place_id": "gunnlaug-place-borg-a-myrum",
+      "passage_id": "gunnlaug-on-c01-p002",
+      "alignment_id": null,
+      "language_code": "on",
+      "surface_form": "Borg",
+      "mention_role": "residence",
+      "visit_status": "present",
+      "locator_method": "manual_passage_review",
+      "character_names": [
+        "Þorsteinn Egilsson"
+      ],
+      "editorial_note": "The Old Norse text identifies Borg as Þorsteinn's dwelling."
+    },
+    {
+      "id": "gunnlaug-pm0002",
+      "place_id": "gunnlaug-place-borg-a-myrum",
+      "passage_id": "gunnlaug-en-c01-p001",
+      "alignment_id": null,
+      "language_code": "en",
+      "surface_form": "Burg",
+      "mention_role": "residence",
+      "visit_status": "present",
+      "locator_method": "manual_passage_review",
+      "character_names": [
+        "Thorstein Egilson"
+      ],
+      "editorial_note": "The Morris-Magnusson translation renders Borg as Burg."
+    },
+    {
+      "id": "gunnlaug-pm0003",
+      "place_id": "gunnlaug-place-gufuaros",
+      "passage_id": "gunnlaug-on-c02-p001",
+      "alignment_id": "gunnlaug-a0001",
+      "language_code": "on",
+      "surface_form": "Gufuárós",
+      "mention_role": "arrival_location",
+      "visit_status": "arrived",
+      "locator_method": "manual_passage_review",
+      "character_names": [
+        "Bergfinnr"
+      ],
+      "editorial_note": "The passage states that a ship arriving from overseas entered Gufuárós."
+    },
+    {
+      "id": "gunnlaug-pm0004",
+      "place_id": "gunnlaug-place-gufuaros",
+      "passage_id": "gunnlaug-en-c02-p001",
+      "alignment_id": "gunnlaug-a0001",
+      "language_code": "en",
+      "surface_form": "Gufaros",
+      "mention_role": "arrival_location",
+      "visit_status": "arrived",
+      "locator_method": "manual_passage_review",
+      "character_names": [
+        "Bergfinn"
+      ],
+      "editorial_note": "The English translation uses the form Gufaros."
+    },
+    {
+      "id": "gunnlaug-pm0005",
+      "place_id": "gunnlaug-place-valfell",
+      "passage_id": "gunnlaug-on-c02-p003",
+      "alignment_id": "gunnlaug-a0003",
+      "language_code": "on",
+      "surface_form": "Valfell",
+      "mention_role": "destination",
+      "visit_status": "visited",
+      "locator_method": "manual_passage_review",
+      "character_names": [
+        "Þorsteinn Egilsson",
+        "Bergfinnr"
+      ],
+      "editorial_note": "The party travels from Þorsteinn's home toward Valfell, where the Borgfirðingar assembly site was located."
+    },
+    {
+      "id": "gunnlaug-pm0006",
+      "place_id": "gunnlaug-place-valfell",
+      "passage_id": "gunnlaug-en-c02-p003",
+      "alignment_id": "gunnlaug-a0003",
+      "language_code": "en",
+      "surface_form": "Hawkfell",
+      "mention_role": "destination",
+      "visit_status": "visited",
+      "locator_method": "manual_passage_review",
+      "character_names": [
+        "Thorstein Egilson",
+        "Bergfinn"
+      ],
+      "editorial_note": "The translation renders Valfell semantically as Hawkfell."
+    }
+  ]
+}
