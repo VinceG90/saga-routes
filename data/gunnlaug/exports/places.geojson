@@ -8,7 +8,7 @@
     "place_mentions": "data/gunnlaug/curated/place_mentions.json",
     "passages": "data/gunnlaug/curated/passages.json"
   },
-  "feature_count": 1,
+  "feature_count": 2,
   "features": [
     {
       "type": "Feature",
@@ -73,6 +73,77 @@
             "sequence_in_document": 2,
             "text": "Þorsteinn bjó at Borg í Borgarfirði. Hann var auðigr at fé ok höfðingi mikill, vitr maðr ok hógværr ok hófsmaðr um alla hluti. Engi var hann afreksmaðr um vöxt eða afl sem Egill, faðir hans, en þó var hann it mesta afarmenni ok vinsæll af allri alþýðu. Þorsteinn var vænn maðr, hvítr á hár ok eygr manna bezt. Hann átti Jófríði Gunnarsdóttur, Hlífarsonar. Hana hafði átt fyrr Þóroddr, sonr Tungu-Odds, ok var þeira dóttir Húngerðr, er þar fæddist upp at Borg með Þorsteini. Jófríðr var skörungr mikill.",
             "editorial_note": "The Old Norse text identifies Borg as Þorsteinn's dwelling."
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "gunnlaug-place-grenjar",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -21.87543,
+          64.69943
+        ]
+      },
+      "properties": {
+        "place_id": "gunnlaug-place-grenjar",
+        "preferred_name": "Grenjar",
+        "alternate_names": [
+          "Grenjum",
+          "Foxholes"
+        ],
+        "feature_type": "farmstead",
+        "associated_site_type": null,
+        "country_code": "IS",
+        "broader_region": "Borgarfjörður, western Iceland",
+        "identification_status": "identified",
+        "spatial_certainty": "medium",
+        "coordinate_source_id": "geo-source-geonames-grenjar",
+        "authority_ids": {
+          "geonames": "3416928"
+        },
+        "editorial_note": "The Árni Magnússon Institute identifies the Grenjar named in Gunnlaugs saga with the farm historically in Álftaneshrepp and now in Borgarbyggð. The coordinates represent the modern farm location and do not claim that the medieval farm buildings occupied precisely the same point.",
+        "mention_count": 2,
+        "mentions": [
+          {
+            "mention_id": "gunnlaug-pm0008",
+            "passage_id": "gunnlaug-en-c02-p003",
+            "alignment_id": "gunnlaug-a0003",
+            "language_code": "en",
+            "surface_form": "Foxholes",
+            "mention_role": "intermediate_stop",
+            "visit_status": "visited",
+            "character_names": [
+              "Thorstein Egilson",
+              "Bergfinn"
+            ],
+            "chapter_number": 2,
+            "chapter_title": "Of Thorstein's Dream",
+            "passage_type": "prose",
+            "sequence_in_document": 6,
+            "text": "One day in spring-tide Thorstein asked Bergfinn if he would ride with him up to Hawkfell, where at that time was the Thing-stead of the Burg-firthers; for Thorstein had been told that the walls of his booth had fallen in. The Eastman said he had good will to go, so that day they rode, some three together, from home, and the house-carles of Thorstein withal, till they came up under Hawkfell to a farmstead called Foxholes. There dwelt a man of small wealth called Atli, who was Thorstein's tenant. Thorstein bade him come and work with them, and bring with him hoe and spade. This he did, and when they came to the tofts of the booth, they set to work all of them, and did out the walls.",
+            "editorial_note": "The translation renders Grenjar as Foxholes."
+          },
+          {
+            "mention_id": "gunnlaug-pm0007",
+            "passage_id": "gunnlaug-on-c02-p003",
+            "alignment_id": "gunnlaug-a0003",
+            "language_code": "on",
+            "surface_form": "Grenjum",
+            "mention_role": "intermediate_stop",
+            "visit_status": "visited",
+            "character_names": [
+              "Þorsteinn Egilsson",
+              "Bergfinnr"
+            ],
+            "chapter_number": 2,
+            "chapter_title": "Draumr Þorsteins Egilssonar.",
+            "passage_type": "prose",
+            "sequence_in_document": 6,
+            "text": "Um várit einn dag ræddi Þorsteinn um við Bergfinn, ef hann vildi ríða með honum upp undir Valfell. Þar var þá þingstöð þeira Borgfirðinga. En Þorsteini var sagt, at fallnir væri búðarveggir hans. Austmaðrinn kveðst þat vilja, ok riðu þeir heiman of daginn þrír saman ok húskarl Þorsteins, þar til er þeir koma til bæjar þess, er at Grenjum heitir. Þar bjó einn maðr félítill, er Atli hét. Hann var landseti Þorsteins, ok beiddi Þorsteinn Atla, at hann færi til starfs með þeim ok hefði pál ok reku. Hann gerði svá. Ok er þeir koma upp undir Valfell til búðartóftanna, þá tóku þeir til starfs allir ok færðu út veggina. Veðrit var heitt af sólu, ok varð þeim Þorsteini ok Austmanni erfitt.",
+            "editorial_note": "The travelers stop at the farm called Grenjar, expressed in the text with the inflected form Grenjum."
           }
         ]
       }

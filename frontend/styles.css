@@ -408,3 +408,24 @@ body {
 .place-focus-button:focus-visible {
   background: var(--accent-light);
 }
+.map-legend {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-route {
+  display: inline-block;
+  width: 28px;
+  height: 0;
+  border-top: 3px solid #8a6742;
+}
+
+.legend-route.schematic {
+  border-top-style: dashed;
+}

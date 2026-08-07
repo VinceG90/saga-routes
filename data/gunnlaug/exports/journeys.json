@@ -100,10 +100,16 @@
               "Foxholes"
             ],
             "feature_type": "farmstead",
-            "identification_status": "unresolved",
-            "spatial_certainty": "low",
-            "has_geometry": false,
-            "geometry": null
+            "identification_status": "identified",
+            "spatial_certainty": "medium",
+            "has_geometry": true,
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -21.87543,
+                64.69943
+              ]
+            }
           },
           "participants": [
             {
@@ -167,19 +173,27 @@
               "Foxholes"
             ],
             "feature_type": "farmstead",
-            "identification_status": "unresolved",
-            "spatial_certainty": "low",
-            "has_geometry": false,
-            "geometry": null
+            "identification_status": "identified",
+            "spatial_certainty": "medium",
+            "has_geometry": true,
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -21.87543,
+                64.69943
+              ]
+            }
           },
           "destination": {
             "id": "gunnlaug-place-valfell",
             "preferred_name": "Valfell",
             "alternate_names": [
-              "Hawkfell"
+              "Hawkfell",
+              "Kambur",
+              "Kamburinn"
             ],
             "feature_type": "landform",
-            "identification_status": "unresolved",
+            "identification_status": "probable",
             "spatial_certainty": "low",
             "has_geometry": false,
             "geometry": null

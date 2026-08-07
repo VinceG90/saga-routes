@@ -19,8 +19,8 @@ VALIDATORS = [
 EXPORTERS = [
     "src/sagaroutes/export_geojson.py",
     "src/sagaroutes/export_journeys.py",
+    "src/sagaroutes/export_journey_routes.py",
 ]
-
 
 class CommandError(Exception):
     """Raised when a SagaRoutes development command fails."""

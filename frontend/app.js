@@ -10,6 +10,8 @@ const UNMAPPED_URL =
 const JOURNEYS_URL =
   "../data/gunnlaug/exports/journeys.json";
 
+const JOURNEY_ROUTES_URL =
+  "../data/gunnlaug/exports/journey_routes.geojson";
 
 const map = new maplibregl.Map({
   container: "map",
@@ -662,15 +664,17 @@ function selectFeature(
 
 map.on("load", async () => {
   try {
-    const [
-      geojson,
-      unmapped,
-      journeys
-    ] = await Promise.all([
-      fetchJSON(GEOJSON_URL),
-      fetchJSON(UNMAPPED_URL),
-      fetchJSON(JOURNEYS_URL)
-    ]);
+const [
+  geojson,
+  unmapped,
+  journeys,
+  journeyRoutes
+] = await Promise.all([
+  fetchJSON(GEOJSON_URL),
+  fetchJSON(UNMAPPED_URL),
+  fetchJSON(JOURNEYS_URL),
+  fetchJSON(JOURNEY_ROUTES_URL)
+]);
 
     if (
       geojson.type !== "FeatureCollection"
@@ -707,7 +711,40 @@ map.on("load", async () => {
         );
       }
     }
+map.addSource("saga-journey-routes", {
+  type: "geojson",
+  data: journeyRoutes
+});
 
+map.addLayer({
+  id: "saga-schematic-routes",
+  type: "line",
+  source: "saga-journey-routes",
+
+  filter: [
+    "==",
+    ["get", "display_type"],
+    "schematic"
+  ],
+
+  layout: {
+    "line-cap": "round",
+    "line-join": "round"
+  },
+
+  paint: {
+    "line-color": "#8a6742",
+    "line-width": [
+      "interpolate",
+      ["linear"],
+      ["zoom"],
+      5, 2,
+      10, 4
+    ],
+    "line-dasharray": [3, 3],
+    "line-opacity": 0.8
+  }
+});
     map.addSource("saga-places", {
       type: "geojson",
       data: geojson
@@ -756,7 +793,51 @@ map.on("load", async () => {
         "text-halo-width": 1.5
       }
     });
+map.on(
+  "click",
+  "saga-schematic-routes",
+  event => {
+    const feature = event.features?.[0];
 
+    if (!feature) {
+      return;
+    }
+
+    const properties = feature.properties;
+
+    const message =
+      `${properties.origin_name} → `
+      + `${properties.destination_name}\n\n`
+      + "Schematic connection only. "
+      + "This line connects reviewed place "
+      + "coordinates and does not represent "
+      + "a reconstructed historical route.";
+
+    new maplibregl.Popup({
+      closeButton: true
+    })
+      .setLngLat(event.lngLat)
+      .setText(message)
+      .addTo(map);
+  }
+);
+
+map.on(
+  "mouseenter",
+  "saga-schematic-routes",
+  () => {
+    map.getCanvas().style.cursor =
+      "pointer";
+  }
+);
+
+map.on(
+  "mouseleave",
+  "saga-schematic-routes",
+  () => {
+    map.getCanvas().style.cursor = "";
+  }
+);
     map.on(
       "click",
       "saga-place-points",

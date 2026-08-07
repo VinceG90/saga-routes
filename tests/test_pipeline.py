@@ -33,6 +33,7 @@ class SagaRoutesPipelineTests(unittest.TestCase):
         exporters = [
             "src/sagaroutes/export_geojson.py",
             "src/sagaroutes/export_journeys.py",
+            "src/sagaroutes/export_journey_routes.py"
         ]
 
         for exporter in exporters:
@@ -176,7 +177,51 @@ class SagaRoutesPipelineTests(unittest.TestCase):
                     current_leg["destination"]["id"],
                     next_leg["origin"]["id"],
                 )
+def test_schematic_routes_use_mapped_endpoints(
+    self,
+) -> None:
+    routes = load_json(
+        EXPORT_DIRECTORY
+        / "journey_routes.geojson"
+    )
 
+    places = load_json(
+        CURATED_DIRECTORY
+        / "places.json"
+    )["places"]
+
+    place_index = {
+        place["id"]: place
+        for place in places
+    }
+
+    for feature in routes["features"]:
+        properties = feature["properties"]
+
+        if properties["display_type"] != "schematic":
+            continue
+
+        origin = place_index[
+            properties["origin_place_id"]
+        ]
+
+        destination = place_index[
+            properties["destination_place_id"]
+        ]
+
+        expected = [
+            origin["geometry"]["coordinates"],
+            destination["geometry"]["coordinates"],
+        ]
+
+        self.assertEqual(
+            feature["geometry"]["coordinates"],
+            expected,
+        )
+
+        self.assertFalse(
+            properties["historical_route_claim"]
+        )
 
 if __name__ == "__main__":
     unittest.main()

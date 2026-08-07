@@ -1,0 +1,43 @@
+{
+  "type": "FeatureCollection",
+  "name": "SagaRoutes: Gunnlaugs saga journey routes",
+  "schema_version": "0.1.0",
+  "work_id": "gunnlaug",
+  "description": "Display geometries for narrative journey legs. Features marked schematic_endpoints are straight connections between reviewed place coordinates and do not claim to represent historical routes.",
+  "feature_count": 1,
+  "features": [
+    {
+      "type": "Feature",
+      "id": "gunnlaug-leg-valfell-001",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -21.915145,
+            64.561782
+          ],
+          [
+            -21.87543,
+            64.69943
+          ]
+        ]
+      },
+      "properties": {
+        "leg_id": "gunnlaug-leg-valfell-001",
+        "journey_id": "gunnlaug-journey-valfell-booth-repair",
+        "journey_title": "Journey to repair the assembly booth at Valfell",
+        "sequence": 1,
+        "origin_place_id": "gunnlaug-place-borg-a-myrum",
+        "origin_name": "Borg á Mýrum",
+        "destination_place_id": "gunnlaug-place-grenjar",
+        "destination_name": "Grenjar",
+        "travel_mode": "horseback",
+        "route_classification": "inferred",
+        "display_type": "schematic",
+        "geometry_basis": "schematic_endpoints",
+        "historical_route_claim": false,
+        "editorial_note": "The text says that the travelers rode from home until they reached Grenjar. Borg is supplied as the origin from the established narrative context identifying it as Þorsteinn's home."
+      }
+    }
+  ]
+}
