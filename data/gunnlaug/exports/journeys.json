@@ -1,0 +1,252 @@
+{
+  "schema_version": "0.1.0",
+  "work_id": "gunnlaug",
+  "description": "Enriched narrative journeys and ordered journey legs for the SagaRoutes web interface.",
+  "journey_count": 1,
+  "journeys": [
+    {
+      "id": "gunnlaug-journey-valfell-booth-repair",
+      "title": "Journey to repair the assembly booth at Valfell",
+      "narrative_order": 1,
+      "purpose": "repair_assembly_booth",
+      "route_certainty": "mixed",
+      "review_status": "provisional",
+      "alignment_ids": [
+        "gunnlaug-a0003"
+      ],
+      "travelers": [
+        {
+          "id": "gunnlaug-character-thorsteinn-egilsson",
+          "preferred_name": "Þorsteinn Egilsson",
+          "alternate_names": [
+            "Thorstein Egilson",
+            "Thorstein"
+          ],
+          "role_in_work": "major_character",
+          "editorial_note": "Resident of Borg á Mýrum and father of Helga the Fair."
+        },
+        {
+          "id": "gunnlaug-character-bergfinnr",
+          "preferred_name": "Bergfinnr",
+          "alternate_names": [
+            "Bergfinn"
+          ],
+          "role_in_work": "minor_character",
+          "editorial_note": "Norwegian shipmaster who lodges with Þorsteinn after arriving at Gufuárós."
+        },
+        {
+          "id": "gunnlaug-character-atli-grenjar",
+          "preferred_name": "Atli of Grenjar",
+          "alternate_names": [
+            "Atli of Foxholes",
+            "Atli"
+          ],
+          "role_in_work": "minor_character",
+          "editorial_note": "Þorsteinn's tenant at Grenjar, who joins the party to repair the assembly booth."
+        }
+      ],
+      "primary_passages": [
+        {
+          "id": "gunnlaug-on-c02-p003",
+          "language_code": "on",
+          "language": "Old Norse",
+          "chapter_number": 2,
+          "chapter_title": "Draumr Þorsteins Egilssonar.",
+          "passage_type": "prose",
+          "sequence_in_document": 6,
+          "text": "Um várit einn dag ræddi Þorsteinn um við Bergfinn, ef hann vildi ríða með honum upp undir Valfell. Þar var þá þingstöð þeira Borgfirðinga. En Þorsteini var sagt, at fallnir væri búðarveggir hans. Austmaðrinn kveðst þat vilja, ok riðu þeir heiman of daginn þrír saman ok húskarl Þorsteins, þar til er þeir koma til bæjar þess, er at Grenjum heitir. Þar bjó einn maðr félítill, er Atli hét. Hann var landseti Þorsteins, ok beiddi Þorsteinn Atla, at hann færi til starfs með þeim ok hefði pál ok reku. Hann gerði svá. Ok er þeir koma upp undir Valfell til búðartóftanna, þá tóku þeir til starfs allir ok færðu út veggina. Veðrit var heitt af sólu, ok varð þeim Þorsteini ok Austmanni erfitt."
+        },
+        {
+          "id": "gunnlaug-en-c02-p003",
+          "language_code": "en",
+          "language": "English",
+          "chapter_number": 2,
+          "chapter_title": "Of Thorstein's Dream",
+          "passage_type": "prose",
+          "sequence_in_document": 6,
+          "text": "One day in spring-tide Thorstein asked Bergfinn if he would ride with him up to Hawkfell, where at that time was the Thing-stead of the Burg-firthers; for Thorstein had been told that the walls of his booth had fallen in. The Eastman said he had good will to go, so that day they rode, some three together, from home, and the house-carles of Thorstein withal, till they came up under Hawkfell to a farmstead called Foxholes. There dwelt a man of small wealth called Atli, who was Thorstein's tenant. Thorstein bade him come and work with them, and bring with him hoe and spade. This he did, and when they came to the tofts of the booth, they set to work all of them, and did out the walls."
+        }
+      ],
+      "leg_count": 2,
+      "mapped_leg_count": 0,
+      "legs": [
+        {
+          "id": "gunnlaug-leg-valfell-001",
+          "sequence": 1,
+          "origin": {
+            "id": "gunnlaug-place-borg-a-myrum",
+            "preferred_name": "Borg á Mýrum",
+            "alternate_names": [
+              "Borg",
+              "Burg"
+            ],
+            "feature_type": "farmstead",
+            "identification_status": "identified",
+            "spatial_certainty": "high",
+            "has_geometry": true,
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -21.915145,
+                64.561782
+              ]
+            }
+          },
+          "destination": {
+            "id": "gunnlaug-place-grenjar",
+            "preferred_name": "Grenjar",
+            "alternate_names": [
+              "Grenjum",
+              "Foxholes"
+            ],
+            "feature_type": "farmstead",
+            "identification_status": "unresolved",
+            "spatial_certainty": "low",
+            "has_geometry": false,
+            "geometry": null
+          },
+          "participants": [
+            {
+              "id": "gunnlaug-character-thorsteinn-egilsson",
+              "preferred_name": "Þorsteinn Egilsson",
+              "alternate_names": [
+                "Thorstein Egilson",
+                "Thorstein"
+              ],
+              "role_in_work": "major_character",
+              "editorial_note": "Resident of Borg á Mýrum and father of Helga the Fair."
+            },
+            {
+              "id": "gunnlaug-character-bergfinnr",
+              "preferred_name": "Bergfinnr",
+              "alternate_names": [
+                "Bergfinn"
+              ],
+              "role_in_work": "minor_character",
+              "editorial_note": "Norwegian shipmaster who lodges with Þorsteinn after arriving at Gufuárós."
+            }
+          ],
+          "passages": [
+            {
+              "id": "gunnlaug-on-c02-p003",
+              "language_code": "on",
+              "language": "Old Norse",
+              "chapter_number": 2,
+              "chapter_title": "Draumr Þorsteins Egilssonar.",
+              "passage_type": "prose",
+              "sequence_in_document": 6,
+              "text": "Um várit einn dag ræddi Þorsteinn um við Bergfinn, ef hann vildi ríða með honum upp undir Valfell. Þar var þá þingstöð þeira Borgfirðinga. En Þorsteini var sagt, at fallnir væri búðarveggir hans. Austmaðrinn kveðst þat vilja, ok riðu þeir heiman of daginn þrír saman ok húskarl Þorsteins, þar til er þeir koma til bæjar þess, er at Grenjum heitir. Þar bjó einn maðr félítill, er Atli hét. Hann var landseti Þorsteins, ok beiddi Þorsteinn Atla, at hann færi til starfs með þeim ok hefði pál ok reku. Hann gerði svá. Ok er þeir koma upp undir Valfell til búðartóftanna, þá tóku þeir til starfs allir ok færðu út veggina. Veðrit var heitt af sólu, ok varð þeim Þorsteini ok Austmanni erfitt."
+            },
+            {
+              "id": "gunnlaug-en-c02-p003",
+              "language_code": "en",
+              "language": "English",
+              "chapter_number": 2,
+              "chapter_title": "Of Thorstein's Dream",
+              "passage_type": "prose",
+              "sequence_in_document": 6,
+              "text": "One day in spring-tide Thorstein asked Bergfinn if he would ride with him up to Hawkfell, where at that time was the Thing-stead of the Burg-firthers; for Thorstein had been told that the walls of his booth had fallen in. The Eastman said he had good will to go, so that day they rode, some three together, from home, and the house-carles of Thorstein withal, till they came up under Hawkfell to a farmstead called Foxholes. There dwelt a man of small wealth called Atli, who was Thorstein's tenant. Thorstein bade him come and work with them, and bring with him hoe and spade. This he did, and when they came to the tofts of the booth, they set to work all of them, and did out the walls."
+            }
+          ],
+          "alignment_id": "gunnlaug-a0003",
+          "travel_mode": "horseback",
+          "route_classification": "inferred",
+          "spatial_display_status": "unmapped",
+          "has_geometry": false,
+          "geometry": null,
+          "editorial_note": "The text says that the travelers rode from home until they reached Grenjar. Borg is supplied as the origin from the established narrative context identifying it as Þorsteinn's home."
+        },
+        {
+          "id": "gunnlaug-leg-valfell-002",
+          "sequence": 2,
+          "origin": {
+            "id": "gunnlaug-place-grenjar",
+            "preferred_name": "Grenjar",
+            "alternate_names": [
+              "Grenjum",
+              "Foxholes"
+            ],
+            "feature_type": "farmstead",
+            "identification_status": "unresolved",
+            "spatial_certainty": "low",
+            "has_geometry": false,
+            "geometry": null
+          },
+          "destination": {
+            "id": "gunnlaug-place-valfell",
+            "preferred_name": "Valfell",
+            "alternate_names": [
+              "Hawkfell"
+            ],
+            "feature_type": "landform",
+            "identification_status": "unresolved",
+            "spatial_certainty": "low",
+            "has_geometry": false,
+            "geometry": null
+          },
+          "participants": [
+            {
+              "id": "gunnlaug-character-thorsteinn-egilsson",
+              "preferred_name": "Þorsteinn Egilsson",
+              "alternate_names": [
+                "Thorstein Egilson",
+                "Thorstein"
+              ],
+              "role_in_work": "major_character",
+              "editorial_note": "Resident of Borg á Mýrum and father of Helga the Fair."
+            },
+            {
+              "id": "gunnlaug-character-bergfinnr",
+              "preferred_name": "Bergfinnr",
+              "alternate_names": [
+                "Bergfinn"
+              ],
+              "role_in_work": "minor_character",
+              "editorial_note": "Norwegian shipmaster who lodges with Þorsteinn after arriving at Gufuárós."
+            },
+            {
+              "id": "gunnlaug-character-atli-grenjar",
+              "preferred_name": "Atli of Grenjar",
+              "alternate_names": [
+                "Atli of Foxholes",
+                "Atli"
+              ],
+              "role_in_work": "minor_character",
+              "editorial_note": "Þorsteinn's tenant at Grenjar, who joins the party to repair the assembly booth."
+            }
+          ],
+          "passages": [
+            {
+              "id": "gunnlaug-on-c02-p003",
+              "language_code": "on",
+              "language": "Old Norse",
+              "chapter_number": 2,
+              "chapter_title": "Draumr Þorsteins Egilssonar.",
+              "passage_type": "prose",
+              "sequence_in_document": 6,
+              "text": "Um várit einn dag ræddi Þorsteinn um við Bergfinn, ef hann vildi ríða með honum upp undir Valfell. Þar var þá þingstöð þeira Borgfirðinga. En Þorsteini var sagt, at fallnir væri búðarveggir hans. Austmaðrinn kveðst þat vilja, ok riðu þeir heiman of daginn þrír saman ok húskarl Þorsteins, þar til er þeir koma til bæjar þess, er at Grenjum heitir. Þar bjó einn maðr félítill, er Atli hét. Hann var landseti Þorsteins, ok beiddi Þorsteinn Atla, at hann færi til starfs með þeim ok hefði pál ok reku. Hann gerði svá. Ok er þeir koma upp undir Valfell til búðartóftanna, þá tóku þeir til starfs allir ok færðu út veggina. Veðrit var heitt af sólu, ok varð þeim Þorsteini ok Austmanni erfitt."
+            },
+            {
+              "id": "gunnlaug-en-c02-p003",
+              "language_code": "en",
+              "language": "English",
+              "chapter_number": 2,
+              "chapter_title": "Of Thorstein's Dream",
+              "passage_type": "prose",
+              "sequence_in_document": 6,
+              "text": "One day in spring-tide Thorstein asked Bergfinn if he would ride with him up to Hawkfell, where at that time was the Thing-stead of the Burg-firthers; for Thorstein had been told that the walls of his booth had fallen in. The Eastman said he had good will to go, so that day they rode, some three together, from home, and the house-carles of Thorstein withal, till they came up under Hawkfell to a farmstead called Foxholes. There dwelt a man of small wealth called Atli, who was Thorstein's tenant. Thorstein bade him come and work with them, and bring with him hoe and spade. This he did, and when they came to the tofts of the booth, they set to work all of them, and did out the walls."
+            }
+          ],
+          "alignment_id": "gunnlaug-a0003",
+          "travel_mode": "horseback",
+          "route_classification": "explicit",
+          "spatial_display_status": "unmapped",
+          "has_geometry": false,
+          "geometry": null,
+          "editorial_note": "After recruiting Atli at Grenjar, the party continues to the booth remains beneath Valfell. The travel relationship is explicit, although the precise route and destination coordinates remain unresolved."
+        }
+      ],
+      "editorial_note": "The journey begins at Þorsteinn's home, understood from the surrounding narrative to be Borg. The travelers stop at Grenjar to recruit Atli and then continue to the assembly-site remains beneath Valfell."
+    }
+  ]
+}

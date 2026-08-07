@@ -1,11 +1,15 @@
-import * as maplibregl from
-  "https://unpkg.com/maplibre-gl@6.2.0/dist/maplibre-gl.mjs";
+import * as maplibregl from "https://unpkg.com/maplibre-gl@6.2.0/dist/maplibre-gl.mjs";
+
 
 const GEOJSON_URL =
   "../data/gunnlaug/exports/places.geojson";
 
 const UNMAPPED_URL =
   "../data/gunnlaug/exports/unmapped_places.json";
+
+const JOURNEYS_URL =
+  "../data/gunnlaug/exports/journeys.json";
+
 
 const map = new maplibregl.Map({
   container: "map",
@@ -15,6 +19,7 @@ const map = new maplibregl.Map({
   maxZoom: 16,
   attributionControl: true
 });
+
 
 map.addControl(
   new maplibregl.NavigationControl({
@@ -28,22 +33,39 @@ map.addControl(
   "top-left"
 );
 
-const statusElement = document.getElementById("data-status");
-const errorElement = document.getElementById("app-error");
-const detailsElement = document.getElementById("place-details");
-const unmappedElement = document.getElementById("unmapped-places");
+
+function getRequiredElement(elementId) {
+  const element = document.getElementById(elementId);
+
+  if (!element) {
+    throw new Error(
+      `Required HTML element was not found: #${elementId}`
+    );
+  }
+
+  return element;
+}
+
+
+const statusElement = getRequiredElement("data-status");
+const errorElement = getRequiredElement("app-error");
+const detailsElement = getRequiredElement("place-details");
+const journeysElement = getRequiredElement("journeys");
+const unmappedElement = getRequiredElement("unmapped-places");
 
 const mappedFeatureIndex = new Map();
 
 
 function clearElement(element) {
-  while (element.firstChild) {
-    element.removeChild(element.firstChild);
-  }
+  element.replaceChildren();
 }
 
 
-function makeElement(tagName, className = "", text = "") {
+function makeElement(
+  tagName,
+  className = "",
+  text = ""
+) {
   const element = document.createElement(tagName);
 
   if (className) {
@@ -59,13 +81,20 @@ function makeElement(tagName, className = "", text = "") {
 
 
 function humanize(value) {
-  if (value === null || value === undefined || value === "") {
+  if (
+    value === null
+    || value === undefined
+    || value === ""
+  ) {
     return "Not recorded";
   }
 
   return String(value)
     .replaceAll("_", " ")
-    .replace(/\b\w/g, character => character.toUpperCase());
+    .replace(
+      /\b\w/g,
+      character => character.toUpperCase()
+    );
 }
 
 
@@ -91,12 +120,16 @@ function addMetadataRow(list, label, value) {
 
 
 function createPassageCard(mention) {
-  const card = makeElement("article", "passage-card");
+  const card = makeElement(
+    "article",
+    "passage-card"
+  );
 
   const title = makeElement(
     "h4",
     "",
-    `${languageName(mention.language_code)}: ${mention.surface_form}`
+    `${languageName(mention.language_code)}: `
+      + `${mention.surface_form}`
   );
 
   const metadataParts = [
@@ -118,7 +151,11 @@ function createPassageCard(mention) {
     mention.text
   );
 
-  card.append(title, metadata, passage);
+  card.append(
+    title,
+    metadata,
+    passage
+  );
 
   if (mention.editorial_note) {
     const note = makeElement(
@@ -136,17 +173,33 @@ function createPassageCard(mention) {
 
 function renderMappedPlace(feature) {
   const properties = feature.properties;
-  const [longitude, latitude] = feature.geometry.coordinates;
+  const coordinates = feature.geometry.coordinates;
+  const [longitude, latitude] = coordinates;
 
   clearElement(detailsElement);
 
   detailsElement.append(
-    makeElement("p", "eyebrow", "Mapped evidence"),
-    makeElement("h2", "", properties.preferred_name)
+    makeElement(
+      "p",
+      "eyebrow",
+      "Mapped evidence"
+    ),
+    makeElement(
+      "h2",
+      "",
+      properties.preferred_name
+    )
   );
 
-  const summary = makeElement("div", "place-summary");
-  const metadata = makeElement("dl", "metadata-list");
+  const summary = makeElement(
+    "div",
+    "place-summary"
+  );
+
+  const metadata = makeElement(
+    "dl",
+    "metadata-list"
+  );
 
   addMetadataRow(
     metadata,
@@ -157,7 +210,8 @@ function renderMappedPlace(feature) {
   addMetadataRow(
     metadata,
     "Alternate names",
-    properties.alternate_names?.length
+    Array.isArray(properties.alternate_names)
+      && properties.alternate_names.length > 0
       ? properties.alternate_names.join(", ")
       : "None recorded"
   );
@@ -189,13 +243,14 @@ function renderMappedPlace(feature) {
   addMetadataRow(
     metadata,
     "Coordinates",
-    `${latitude.toFixed(6)}, ${longitude.toFixed(6)}`
+    `${latitude.toFixed(6)}, `
+      + `${longitude.toFixed(6)}`
   );
 
   addMetadataRow(
     metadata,
     "Textual mentions",
-    properties.mention_count
+    properties.mention_count ?? 0
   );
 
   summary.append(metadata);
@@ -211,13 +266,13 @@ function renderMappedPlace(feature) {
     );
   }
 
-  const passagesHeading = makeElement(
-    "h3",
-    "passages-heading",
-    "Textual evidence"
+  detailsElement.append(
+    makeElement(
+      "h3",
+      "passages-heading",
+      "Textual evidence"
+    )
   );
-
-  detailsElement.append(passagesHeading);
 
   const mentions = Array.isArray(properties.mentions)
     ? properties.mentions
@@ -231,11 +286,14 @@ function renderMappedPlace(feature) {
         "No passage annotations are currently attached."
       )
     );
+
     return;
   }
 
   for (const mention of mentions) {
-    detailsElement.append(createPassageCard(mention));
+    detailsElement.append(
+      createPassageCard(mention)
+    );
   }
 }
 
@@ -255,11 +313,15 @@ function renderUnmappedPlaces(dataset) {
         "No unresolved locations are currently recorded."
       )
     );
+
     return;
   }
 
   for (const place of places) {
-    const card = makeElement("article", "unmapped-card");
+    const card = makeElement(
+      "article",
+      "unmapped-card"
+    );
 
     const name = makeElement(
       "h3",
@@ -267,12 +329,18 @@ function renderUnmappedPlaces(dataset) {
       place.preferred_name
     );
 
+    const mentionCount =
+      Number.isInteger(place.mention_count)
+        ? place.mention_count
+        : 0;
+
     const status = makeElement(
       "p",
       "unmapped-status",
       [
         humanize(place.identification_status),
-        `${place.mention_count} textual mention(s)`
+        `${mentionCount} textual mention`
+          + `${mentionCount === 1 ? "" : "s"}`
       ].join(" · ")
     );
 
@@ -280,10 +348,256 @@ function renderUnmappedPlaces(dataset) {
       "p",
       "",
       place.editorial_note
+        || "No editorial note has been recorded."
     );
 
-    card.append(name, status, note);
+    card.append(
+      name,
+      status,
+      note
+    );
+
     unmappedElement.append(card);
+  }
+}
+
+
+function createBadge(
+  text,
+  modifier = ""
+) {
+  const className = [
+    "status-badge",
+    modifier
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  return makeElement(
+    "span",
+    className,
+    text
+  );
+}
+
+
+function createPlaceFocusButton(place) {
+  if (!mappedFeatureIndex.has(place.id)) {
+    return null;
+  }
+
+  const button = makeElement(
+    "button",
+    "place-focus-button",
+    `View ${place.preferred_name} on map`
+  );
+
+  button.type = "button";
+
+  button.addEventListener("click", () => {
+    selectFeature(place.id, true);
+  });
+
+  return button;
+}
+
+
+function createJourneyLeg(leg) {
+  const item = makeElement(
+    "li",
+    "itinerary-leg"
+  );
+
+  const heading = makeElement(
+    "h4",
+    "leg-heading",
+    `${leg.sequence}. `
+      + `${leg.origin.preferred_name} → `
+      + `${leg.destination.preferred_name}`
+  );
+
+  const participantNames = Array.isArray(
+    leg.participants
+  )
+    ? leg.participants
+        .map(person => person.preferred_name)
+        .join(", ")
+    : "Participants not recorded";
+
+  const metadata = makeElement(
+    "p",
+    "leg-metadata",
+    [
+      humanize(leg.travel_mode),
+      humanize(leg.route_classification),
+      participantNames
+    ].join(" · ")
+  );
+
+  const note = makeElement(
+    "p",
+    "leg-note",
+    leg.editorial_note
+      || "No editorial note has been recorded."
+  );
+
+  item.append(
+    heading,
+    metadata,
+    note
+  );
+
+  const buttonRow = makeElement(
+    "div",
+    "journey-button-row"
+  );
+
+  const originButton = createPlaceFocusButton(
+    leg.origin
+  );
+
+  const destinationButton =
+    createPlaceFocusButton(
+      leg.destination
+    );
+
+  if (originButton) {
+    buttonRow.append(originButton);
+  }
+
+  if (destinationButton) {
+    buttonRow.append(destinationButton);
+  }
+
+  if (buttonRow.childElementCount > 0) {
+    item.append(buttonRow);
+  }
+
+  return item;
+}
+
+
+function renderJourneys(dataset) {
+  clearElement(journeysElement);
+
+  const journeys = Array.isArray(dataset.journeys)
+    ? dataset.journeys
+    : [];
+
+  if (journeys.length === 0) {
+    journeysElement.append(
+      makeElement(
+        "p",
+        "",
+        "No journeys are currently recorded."
+      )
+    );
+
+    return;
+  }
+
+  for (const journey of journeys) {
+    const card = makeElement(
+      "article",
+      "journey-card"
+    );
+
+    card.append(
+      makeElement(
+        "p",
+        "eyebrow",
+        `Journey ${journey.narrative_order}`
+      ),
+      makeElement(
+        "h3",
+        "",
+        journey.title
+      )
+    );
+
+    const travelerNames = Array.isArray(
+      journey.travelers
+    )
+      ? journey.travelers
+          .map(person => person.preferred_name)
+          .join(", ")
+      : "Travelers not recorded";
+
+    card.append(
+      makeElement(
+        "p",
+        "journey-travelers",
+        `Travelers: ${travelerNames}`
+      )
+    );
+
+    const badges = makeElement(
+      "div",
+      "badge-row"
+    );
+
+    badges.append(
+      createBadge(
+        `${humanize(journey.route_certainty)} `
+          + "route certainty"
+      ),
+      createBadge(
+        humanize(journey.review_status)
+      ),
+      createBadge(
+        `${journey.leg_count} leg`
+          + `${journey.leg_count === 1 ? "" : "s"}`
+      )
+    );
+
+    if (journey.mapped_leg_count === 0) {
+      badges.append(
+        createBadge(
+          "Route geometry unresolved",
+          "unmapped"
+        )
+      );
+    } else if (
+      journey.mapped_leg_count
+      < journey.leg_count
+    ) {
+      badges.append(
+        createBadge(
+          "Route partially mapped",
+          "unmapped"
+        )
+      );
+    }
+
+    card.append(badges);
+
+    if (journey.editorial_note) {
+      card.append(
+        makeElement(
+          "p",
+          "journey-note",
+          journey.editorial_note
+        )
+      );
+    }
+
+    const itinerary = makeElement(
+      "ol",
+      "itinerary"
+    );
+
+    const legs = Array.isArray(journey.legs)
+      ? journey.legs
+      : [];
+
+    for (const leg of legs) {
+      itinerary.append(
+        createJourneyLeg(leg)
+      );
+    }
+
+    card.append(itinerary);
+    journeysElement.append(card);
   }
 }
 
@@ -291,7 +605,8 @@ function renderUnmappedPlaces(dataset) {
 function showError(message) {
   errorElement.textContent = message;
   errorElement.hidden = false;
-  statusElement.textContent = "Data loading failed";
+  statusElement.textContent =
+    "Data loading failed";
 }
 
 
@@ -300,7 +615,8 @@ async function fetchJSON(url) {
 
   if (!response.ok) {
     throw new Error(
-      `Could not load ${url}: HTTP ${response.status}`
+      `Could not load ${url}: `
+        + `HTTP ${response.status}`
     );
   }
 
@@ -308,8 +624,12 @@ async function fetchJSON(url) {
 }
 
 
-function selectFeature(placeId, openPopup = false) {
-  const feature = mappedFeatureIndex.get(placeId);
+function selectFeature(
+  placeId,
+  openPopup = false
+) {
+  const feature =
+    mappedFeatureIndex.get(placeId);
 
   if (!feature) {
     return;
@@ -317,7 +637,8 @@ function selectFeature(placeId, openPopup = false) {
 
   renderMappedPlace(feature);
 
-  const coordinates = feature.geometry.coordinates;
+  const coordinates =
+    feature.geometry.coordinates;
 
   map.easeTo({
     center: coordinates,
@@ -331,7 +652,9 @@ function selectFeature(placeId, openPopup = false) {
       closeButton: true
     })
       .setLngLat(coordinates)
-      .setText(feature.properties.preferred_name)
+      .setText(
+        feature.properties.preferred_name
+      )
       .addTo(map);
   }
 }
@@ -339,9 +662,14 @@ function selectFeature(placeId, openPopup = false) {
 
 map.on("load", async () => {
   try {
-    const [geojson, unmapped] = await Promise.all([
+    const [
+      geojson,
+      unmapped,
+      journeys
+    ] = await Promise.all([
       fetchJSON(GEOJSON_URL),
-      fetchJSON(UNMAPPED_URL)
+      fetchJSON(UNMAPPED_URL),
+      fetchJSON(JOURNEYS_URL)
     ]);
 
     if (
@@ -349,15 +677,34 @@ map.on("load", async () => {
       || !Array.isArray(geojson.features)
     ) {
       throw new Error(
-        "places.geojson is not a valid FeatureCollection."
+        "places.geojson is not a valid "
+          + "GeoJSON FeatureCollection."
+      );
+    }
+
+    if (!Array.isArray(unmapped.places)) {
+      throw new Error(
+        "unmapped_places.json does not "
+          + "contain a places array."
+      );
+    }
+
+    if (!Array.isArray(journeys.journeys)) {
+      throw new Error(
+        "journeys.json does not contain "
+          + "a journeys array."
       );
     }
 
     for (const feature of geojson.features) {
-      const placeId = feature.properties?.place_id;
+      const placeId =
+        feature.properties?.place_id;
 
       if (placeId) {
-        mappedFeatureIndex.set(placeId, feature);
+        mappedFeatureIndex.set(
+          placeId,
+          feature
+        );
       }
     }
 
@@ -375,8 +722,10 @@ map.on("load", async () => {
           "interpolate",
           ["linear"],
           ["zoom"],
-          5, 6,
-          10, 10
+          5,
+          6,
+          10,
+          10
         ],
         "circle-color": "#365f52",
         "circle-stroke-color": "#ffffff",
@@ -389,8 +738,13 @@ map.on("load", async () => {
       type: "symbol",
       source: "saga-places",
       layout: {
-        "text-field": ["get", "preferred_name"],
-        "text-font": ["Noto Sans Regular"],
+        "text-field": [
+          "get",
+          "preferred_name"
+        ],
+        "text-font": [
+          "Noto Sans Regular"
+        ],
         "text-size": 13,
         "text-offset": [0, 1.3],
         "text-anchor": "top",
@@ -403,41 +757,78 @@ map.on("load", async () => {
       }
     });
 
-    map.on("click", "saga-place-points", event => {
-      const renderedFeature = event.features?.[0];
-      const placeId = renderedFeature?.properties?.place_id;
+    map.on(
+      "click",
+      "saga-place-points",
+      event => {
+        const renderedFeature =
+          event.features?.[0];
 
-      if (placeId) {
-        selectFeature(placeId, true);
+        const placeId =
+          renderedFeature?.properties?.place_id;
+
+        if (placeId) {
+          selectFeature(placeId, true);
+        }
       }
-    });
+    );
 
-    map.on("mouseenter", "saga-place-points", () => {
-      map.getCanvas().style.cursor = "pointer";
-    });
+    map.on(
+      "mouseenter",
+      "saga-place-points",
+      () => {
+        map.getCanvas().style.cursor =
+          "pointer";
+      }
+    );
 
-    map.on("mouseleave", "saga-place-points", () => {
-      map.getCanvas().style.cursor = "";
-    });
+    map.on(
+      "mouseleave",
+      "saga-place-points",
+      () => {
+        map.getCanvas().style.cursor = "";
+      }
+    );
 
+    renderJourneys(journeys);
     renderUnmappedPlaces(unmapped);
 
-    statusElement.textContent =
-      `${geojson.features.length} mapped place`
-      + `${geojson.features.length === 1 ? "" : "s"}`
-      + ` · ${unmapped.place_count} awaiting coordinates`;
+    const mappedPlaceCount =
+      geojson.features.length;
 
-    if (geojson.features.length === 1) {
-      const onlyFeature = geojson.features[0];
+    const unmappedPlaceCount =
+      Number.isInteger(unmapped.place_count)
+        ? unmapped.place_count
+        : unmapped.places.length;
+
+    const journeyCount =
+      Number.isInteger(journeys.journey_count)
+        ? journeys.journey_count
+        : journeys.journeys.length;
+
+    statusElement.textContent =
+      `${mappedPlaceCount} mapped place`
+      + `${mappedPlaceCount === 1 ? "" : "s"}`
+      + ` · ${unmappedPlaceCount} awaiting coordinates`
+      + ` · ${journeyCount} journey`
+      + `${journeyCount === 1 ? "" : "s"}`;
+
+    if (mappedPlaceCount === 1) {
+      const onlyFeature =
+        geojson.features[0];
+
       selectFeature(
         onlyFeature.properties.place_id,
         false
       );
-    } else if (geojson.features.length > 1) {
-      const bounds = new maplibregl.LngLatBounds();
+    } else if (mappedPlaceCount > 1) {
+      const bounds =
+        new maplibregl.LngLatBounds();
 
       for (const feature of geojson.features) {
-        bounds.extend(feature.geometry.coordinates);
+        bounds.extend(
+          feature.geometry.coordinates
+        );
       }
 
       map.fitBounds(bounds, {
