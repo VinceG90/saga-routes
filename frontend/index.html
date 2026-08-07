@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="An uncertainty-aware map of narrative places and journeys in Gunnlaugs saga ormstungu."
+  >
+
+  <title>SagaRoutes — Gunnlaugs saga</title>
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/maplibre-gl@6.2.0/dist/maplibre-gl.css"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Digital humanities prototype</p>
+      <h1>SagaRoutes</h1>
+      <p class="subtitle">
+        Mapping narrative movement in
+        <cite>Gunnlaugs saga ormstungu</cite>
+      </p>
+    </div>
+
+    <p id="data-status" class="data-status" aria-live="polite">
+      Loading geographic data…
+    </p>
+  </header>
+
+  <div
+    id="app-error"
+    class="error-message"
+    role="alert"
+    hidden
+  ></div>
+
+  <main class="application">
+    <section class="map-region" aria-label="Interactive saga map">
+      <div
+        id="map"
+        role="application"
+        aria-label="Map of places in Gunnlaugs saga"
+      ></div>
+
+      <div class="map-legend" aria-label="Map legend">
+        <span class="legend-marker"></span>
+        <span>Reviewed location</span>
+      </div>
+    </section>
+
+    <aside class="research-panel">
+      <section
+        id="place-details"
+        class="panel-section"
+        aria-live="polite"
+      >
+        <p class="eyebrow">Mapped evidence</p>
+        <h2>Select a location</h2>
+
+        <p>
+          Select a marker to view the normalized place record,
+          textual forms, passages, and editorial notes.
+        </p>
+      </section>
+
+      <section class="panel-section unresolved-section">
+        <p class="eyebrow">Unresolved geography</p>
+        <h2>Awaiting coordinates</h2>
+
+        <p class="section-introduction">
+          These places remain part of the research dataset but are
+          withheld from the map until their locations can be
+          supported more confidently.
+        </p>
+
+        <div id="unmapped-places"></div>
+      </section>
+    </aside>
+  </main>
+
+  <noscript>
+    <p class="noscript-message">
+      SagaRoutes requires JavaScript to display the interactive map.
+    </p>
+  </noscript>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
