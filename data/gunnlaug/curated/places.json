@@ -60,6 +60,23 @@
       "coordinate_source_id": null,
       "authority_ids": {},
       "editorial_note": "The Old Norse text locates the Borgfirðingar assembly site under Valfell. The Morris-Magnusson translation renders the name as Hawkfell. An exact modern landform and coordinate have not yet been verified."
+    },
+    {
+      "id": "gunnlaug-place-grenjar",
+      "preferred_name": "Grenjar",
+      "alternate_names": [
+        "Grenjum",
+        "Foxholes"
+      ],
+      "feature_type": "farmstead",
+      "country_code": "IS",
+      "broader_region": "Borgarfjörður, western Iceland",
+      "identification_status": "unresolved",
+      "spatial_certainty": "low",
+      "geometry": null,
+      "coordinate_source_id": null,
+      "authority_ids": {},
+      "editorial_note": "The Old Norse text uses the inflected form Grenjum for a farmstead occupied by Atli. The Morris-Magnusson translation renders the name as Foxholes. Its exact modern identification has not yet been verified."
     }
   ]
 }

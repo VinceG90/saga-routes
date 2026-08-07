@@ -1,0 +1,36 @@
+{
+  "schema_version": "0.1.0",
+  "work_id": "gunnlaug",
+  "description": "Normalized people participating in the initial SagaRoutes journey model.",
+  "characters": [
+    {
+      "id": "gunnlaug-character-thorsteinn-egilsson",
+      "preferred_name": "Þorsteinn Egilsson",
+      "alternate_names": [
+        "Thorstein Egilson",
+        "Thorstein"
+      ],
+      "role_in_work": "major_character",
+      "editorial_note": "Resident of Borg á Mýrum and father of Helga the Fair."
+    },
+    {
+      "id": "gunnlaug-character-bergfinnr",
+      "preferred_name": "Bergfinnr",
+      "alternate_names": [
+        "Bergfinn"
+      ],
+      "role_in_work": "minor_character",
+      "editorial_note": "Norwegian shipmaster who lodges with Þorsteinn after arriving at Gufuárós."
+    },
+    {
+      "id": "gunnlaug-character-atli-grenjar",
+      "preferred_name": "Atli of Grenjar",
+      "alternate_names": [
+        "Atli of Foxholes",
+        "Atli"
+      ],
+      "role_in_work": "minor_character",
+      "editorial_note": "Þorsteinn's tenant at Grenjar, who joins the party to repair the assembly booth."
+    }
+  ]
+}

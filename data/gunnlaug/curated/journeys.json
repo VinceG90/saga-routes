@@ -1,0 +1,32 @@
+{
+  "schema_version": "0.1.0",
+  "work_id": "gunnlaug",
+  "description": "Narrative journeys represented as ordered groups of journey legs.",
+  "journeys": [
+    {
+      "id": "gunnlaug-journey-valfell-booth-repair",
+      "title": "Journey to repair the assembly booth at Valfell",
+      "traveler_ids": [
+        "gunnlaug-character-thorsteinn-egilsson",
+        "gunnlaug-character-bergfinnr",
+        "gunnlaug-character-atli-grenjar"
+      ],
+      "primary_passage_ids": [
+        "gunnlaug-on-c02-p003",
+        "gunnlaug-en-c02-p003"
+      ],
+      "alignment_ids": [
+        "gunnlaug-a0003"
+      ],
+      "journey_leg_ids": [
+        "gunnlaug-leg-valfell-001",
+        "gunnlaug-leg-valfell-002"
+      ],
+      "narrative_order": 1,
+      "purpose": "repair_assembly_booth",
+      "route_certainty": "mixed",
+      "review_status": "provisional",
+      "editorial_note": "The journey begins at Þorsteinn's home, understood from the surrounding narrative to be Borg. The travelers stop at Grenjar to recruit Atli and then continue to the assembly-site remains beneath Valfell."
+    }
+  ]
+}

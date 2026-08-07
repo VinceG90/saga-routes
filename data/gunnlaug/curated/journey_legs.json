@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1.0",
+  "work_id": "gunnlaug",
+  "description": "Ordered narrative movements between normalized geographic entities.",
+  "journey_legs": [
+    {
+      "id": "gunnlaug-leg-valfell-001",
+      "journey_id": "gunnlaug-journey-valfell-booth-repair",
+      "sequence": 1,
+      "origin_place_id": "gunnlaug-place-borg-a-myrum",
+      "destination_place_id": "gunnlaug-place-grenjar",
+      "participant_ids": [
+        "gunnlaug-character-thorsteinn-egilsson",
+        "gunnlaug-character-bergfinnr"
+      ],
+      "passage_ids": [
+        "gunnlaug-on-c02-p003",
+        "gunnlaug-en-c02-p003"
+      ],
+      "alignment_id": "gunnlaug-a0003",
+      "travel_mode": "horseback",
+      "route_classification": "inferred",
+      "spatial_display_status": "unmapped",
+      "geometry": null,
+      "editorial_note": "The text says that the travelers rode from home until they reached Grenjar. Borg is supplied as the origin from the established narrative context identifying it as Þorsteinn's home."
+    },
+    {
+      "id": "gunnlaug-leg-valfell-002",
+      "journey_id": "gunnlaug-journey-valfell-booth-repair",
+      "sequence": 2,
+      "origin_place_id": "gunnlaug-place-grenjar",
+      "destination_place_id": "gunnlaug-place-valfell",
+      "participant_ids": [
+        "gunnlaug-character-thorsteinn-egilsson",
+        "gunnlaug-character-bergfinnr",
+        "gunnlaug-character-atli-grenjar"
+      ],
+      "passage_ids": [
+        "gunnlaug-on-c02-p003",
+        "gunnlaug-en-c02-p003"
+      ],
+      "alignment_id": "gunnlaug-a0003",
+      "travel_mode": "horseback",
+      "route_classification": "explicit",
+      "spatial_display_status": "unmapped",
+      "geometry": null,
+      "editorial_note": "After recruiting Atli at Grenjar, the party continues to the booth remains beneath Valfell. The travel relationship is explicit, although the precise route and destination coordinates remain unresolved."
+    }
+  ]
+}
