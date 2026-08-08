@@ -146,3 +146,65 @@ SagaRoutes software is licensed separately from its source texts and research da
 - **Intended use:** Discovery of candidate saga-place identifications and comparison with prior digital mapping
 - **Reliability note:** The project describes its map as a beta version and warns that its geographic data has not been fully checked. Candidate coordinates must therefore be independently reviewed before adoption by SagaRoutes.
 
+## Geographic Source 003: Grenjar identification
+
+- **Source ID:** `geo-source-arnastofnun-grenjar`
+- **Institution:** Stofnun Árna Magnússonar í íslenskum fræðum
+- **Resource:** Svör við fyrirspurnum um örnefni
+- **Resource type:** Institutional place-name reference
+- **Date accessed:** 2026-08-07
+- **Finding:** The Institute identifies the Grenjar mentioned in
+  Gunnlaugs saga as the farm formerly in Álftaneshrepp and now
+  within Borgarbyggð.
+- **Intended use:** Historical identification of saga-place Grenjar.
+- **Reliability note:** Strong evidence for continuity of the place-name
+  and farm identity, but not for the exact location of medieval buildings.
+
+## Geographic Source 004: Grenjar coordinates
+
+- **Source ID:** `geo-source-geonames-grenjar`
+- **Resource:** Grenjar geographic record
+- **Underlying authority:** GeoNames
+- **GeoNames ID:** 3416928
+- **Date accessed:** 2026-08-07
+- **Coordinates:** 64.69943, -21.87543
+- **Intended use:** Modern location of the farm Grenjar.
+- **Reliability note:** Coordinates locate the modern named farm.
+  SagaRoutes does not equate this point with the exact medieval farmstead.
+
+## Geographic Source 005: Valfell / Kambur identification
+
+- **Source ID:** `geo-source-vsnr-valfell`
+- **Institution:** Viking Society for Northern Research
+- **Resource:** Bandamanna saga, general notes
+- **Date accessed:** 2026-08-07
+- **Finding:** Scholarly commentary states that Valfell, also named in
+  Gunnlaugs saga chapter 2, has been identified with the mountain
+  now called Kambur.
+- **Intended use:** Identification of Valfell with modern Kambur.
+- **Reliability note:** Supports the name identification, but a precise
+  geographic point has not yet been adopted by SagaRoutes.
+
+## Geographic Source 006: Tandrasel place-name record
+
+- **Source ID:** `geo-source-arnastofnun-tandrasel`
+- **Institution:** Stofnun Árna Magnússonar í íslenskum fræðum
+- **Resource:** Tandrasel örnefnaskrá
+- **Resource type:** Official place-name archive
+- **Date accessed:** 2026-08-07
+- **Finding:** The place-name record documents Kamburinn and named
+  landscape features associated with it in the Tandrasel area.
+- **Intended use:** Corroboration of the modern Kambur/Kamburinn name.
+
+## Geographic Source 007: Gufuá river
+
+- **Source ID:** `geo-source-gufua-river`
+- **Resource:** Modern geographic records for Gufuá, Borgarbyggð
+- **Related Wikidata ID:** Q134355912
+- **Related OpenStreetMap ID:** way/306096106
+- **Date accessed:** 2026-08-07
+- **Intended use:** Identification of the river associated with
+  saga-place Gufuárós.
+- **Reliability note:** Modern sources establish the river and its
+  estuarine context. They do not by themselves establish the exact
+  medieval harbor or landing point.
