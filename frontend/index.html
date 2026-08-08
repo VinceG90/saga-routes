@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
 
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1"
+    content="width=device-width, initial-scale=1.0"
   >
 
   <meta
     name="description"
-    content="An uncertainty-aware map of narrative places and journeys in Gunnlaugs saga ormstungu."
+    content="SagaRoutes prototype for mapping narrative movement in medieval Icelandic sagas."
   >
 
   <title>SagaRoutes — Gunnlaugs saga</title>
@@ -20,100 +20,213 @@
     href="https://unpkg.com/maplibre-gl@6.2.0/dist/maplibre-gl.css"
   >
 
-  <link rel="stylesheet" href="styles.css">
+  <link
+    rel="stylesheet"
+    href="./styles.css"
+  >
+
+  <!-- Prevent an unnecessary favicon request during local development. -->
+  <link rel="icon" href="data:,">
 </head>
 
 <body>
   <header class="site-header">
     <div>
-      <p class="eyebrow">Digital humanities prototype</p>
+      <p class="eyebrow">
+        Digital Humanities Prototype
+      </p>
+
       <h1>SagaRoutes</h1>
-      <p class="subtitle">
+
+      <p class="site-subtitle">
         Mapping narrative movement in
-        <cite>Gunnlaugs saga ormstungu</cite>
+        <em>Gunnlaugs saga ormstungu</em>
       </p>
     </div>
 
-    <p id="data-status" class="data-status" aria-live="polite">
-      Loading geographic data…
-    </p>
+    <div
+      id="status"
+      class="status"
+      aria-live="polite"
+    >
+      Loading research data…
+    </div>
   </header>
 
-  <div
-    id="app-error"
-    class="error-message"
-    role="alert"
-    hidden
-  ></div>
+  <main class="app-layout">
+    <section
+      class="map-panel"
+      aria-labelledby="map-heading"
+    >
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">
+            Geographic view
+          </p>
 
-  <main class="application">
-    <section class="map-region" aria-label="Interactive saga map">
+          <h2 id="map-heading">
+            Narrative Geography
+          </h2>
+        </div>
+
+        <div
+          class="map-legend"
+          aria-label="Map legend"
+        >
+          <div class="legend-row">
+            <span
+              class="legend-marker"
+              aria-hidden="true"
+            ></span>
+
+            <span>
+              Reviewed location
+            </span>
+          </div>
+
+          <div class="legend-row">
+            <span
+              class="legend-route schematic"
+              aria-hidden="true"
+            ></span>
+
+            <span>
+              Schematic journey connection
+            </span>
+          </div>
+        </div>
+      </div>
+
       <div
         id="map"
-        role="application"
-        aria-label="Map of places in Gunnlaugs saga"
+        class="map"
+        aria-label="Interactive map of saga locations"
       ></div>
 
-<div class="map-legend" aria-label="Map legend">
-  <div class="legend-row">
-    <span class="legend-marker"></span>
-    <span>Reviewed location</span>
-  </div>
-
-  <div class="legend-row">
-    <span class="legend-route schematic"></span>
-    <span>Schematic journey connection</span>
-  </div>
-</div>
+      <p class="map-note">
+        Dashed route lines are schematic connections between
+        reviewed endpoints. They do not claim to reproduce the
+        historical path taken by travelers.
+      </p>
     </section>
 
-    <aside class="research-panel">
-      <section
-        id="place-details"
-        class="panel-section"
-        aria-live="polite"
-      >
-        <p class="eyebrow">Mapped evidence</p>
-        <h2>Select a location</h2>
+    <aside
+      class="research-panel"
+      aria-labelledby="research-heading"
+    >
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">
+            Research record
+          </p>
 
-        <p>
-          Select a marker to view the normalized place record,
-          textual forms, passages, and editorial notes.
+          <h2 id="research-heading">
+            Place Evidence
+          </h2>
+        </div>
+      </div>
+
+      <div id="place-details">
+        <p class="empty-state">
+          Select a mapped place to inspect its normalized
+          geographic record and textual evidence.
         </p>
-      </section>
-
-<section class="panel-section journey-section">
-  <p class="eyebrow">Narrative movement</p>
-  <h2>Journeys</h2>
-
-  <p class="section-introduction">
-    Journey stages remain visible even when their precise routes
-    cannot yet be drawn responsibly.
-  </p>
-
-  <div id="journeys"></div>
-</section>
-      <section class="panel-section unresolved-section">
-        <p class="eyebrow">Unresolved geography</p>
-        <h2>Awaiting coordinates</h2>
-
-        <p class="section-introduction">
-          These places remain part of the research dataset but are
-          withheld from the map until their locations can be
-          supported more confidently.
-        </p>
-
-        <div id="unmapped-places"></div>
-      </section>
+      </div>
     </aside>
+
+    <section
+      class="journeys-panel"
+      aria-labelledby="journeys-heading"
+    >
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">
+            Narrative movement
+          </p>
+
+          <h2 id="journeys-heading">
+            Journeys
+          </h2>
+        </div>
+      </div>
+
+      <p class="section-introduction">
+        Journey records preserve the difference between movement
+        stated directly by the text and movement inferred through
+        editorial interpretation.
+      </p>
+
+      <div id="journeys">
+        <p class="empty-state">
+          Loading journey records…
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="evidence-panel"
+      aria-labelledby="movement-evidence-heading"
+    >
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">
+            Textual provenance
+          </p>
+
+          <h2 id="movement-evidence-heading">
+            Movement Evidence
+          </h2>
+        </div>
+      </div>
+
+      <div id="movement-evidence">
+        <p class="empty-state">
+          Select a journey leg to inspect its textual evidence.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="unmapped-panel"
+      aria-labelledby="unmapped-heading"
+    >
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">
+            Unresolved geography
+          </p>
+
+          <h2 id="unmapped-heading">
+            Locations Awaiting Mapping
+          </h2>
+        </div>
+      </div>
+
+      <p class="section-introduction">
+        These places remain part of the research dataset even
+        though SagaRoutes does not yet assign them reviewed
+        coordinates.
+      </p>
+
+      <div id="unmapped-places">
+        <p class="empty-state">
+          Loading unresolved locations…
+        </p>
+      </div>
+    </section>
   </main>
 
-  <noscript>
-    <p class="noscript-message">
-      SagaRoutes requires JavaScript to display the interactive map.
+  <footer class="site-footer">
+    <p>
+      SagaRoutes is a research prototype emphasizing provenance,
+      uncertainty, and editorial transparency in the geographic
+      interpretation of medieval narrative.
     </p>
-  </noscript>
+  </footer>
 
-  <script type="module" src="app.js"></script>
+  <script
+    type="module"
+    src="./app.js"
+  ></script>
 </body>
 </html>

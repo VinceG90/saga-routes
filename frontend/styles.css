@@ -1,431 +1,857 @@
 :root {
-  color-scheme: light;
-
-  --background: #f3f1eb;
+  --background: #f4f1e9;
   --surface: #ffffff;
-  --surface-muted: #f7f5f0;
-  --text: #20251f;
-  --text-muted: #5e665d;
-  --border: #d8d5cc;
-  --accent: #365f52;
-  --accent-dark: #21483d;
-  --accent-light: #dce9e3;
-  --warning-background: #fff7dd;
-  --warning-border: #dec267;
-  --error-background: #fff0ef;
-  --error-border: #c9544d;
-  --shadow: 0 8px 24px rgb(32 37 31 / 10%);
+  --surface-soft: #f8f6f0;
+
+  --text: #252b27;
+  --text-muted: #687069;
+
+  --accent: #294c3a;
+  --accent-soft: #dfe8e2;
+  --accent-dark: #193426;
+
+  --border: #d8d6cf;
+
+  --route: #8a6742;
+
+  --shadow:
+    0 2px 12px rgba(30, 38, 33, 0.08);
+
+  --radius: 10px;
 }
+
 
 * {
   box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
-  margin: 0;
+
+html {
+  scroll-behavior: smooth;
 }
 
+
 body {
+  margin: 0;
   background: var(--background);
   color: var(--text);
+
   font-family:
-    Inter,
-    ui-sans-serif,
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+
+  line-height: 1.5;
 }
 
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+
+/*
+ * Site header
+ */
+
 .site-header {
-  min-height: 116px;
-  padding: 20px 28px;
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+
+  padding: 24px 32px;
+
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
 }
 
+
 .site-header h1 {
-  margin: 2px 0 4px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(
+    2.2rem,
+    4vw,
+    3.5rem
+  );
+
   line-height: 1;
 }
 
+
+.site-subtitle {
+  margin: 10px 0 0;
+
+  color: var(--text-muted);
+}
+
+
 .eyebrow {
-  margin: 0;
+  margin: 0 0 6px;
+
   color: var(--accent);
-  font-size: 0.73rem;
-  font-weight: 750;
-  letter-spacing: 0.12em;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.11em;
   text-transform: uppercase;
 }
 
-.subtitle {
-  margin: 0;
-  color: var(--text-muted);
-}
 
-.data-status {
-  margin: 0;
+.status {
+  flex-shrink: 0;
+
   color: var(--text-muted);
+
   font-size: 0.9rem;
   text-align: right;
 }
 
-.application {
-  height: calc(100vh - 116px);
-  min-height: 600px;
+
+/*
+ * Main application layout
+ */
+
+.app-layout {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(340px, 1fr);
+
+  grid-template-columns:
+    minmax(0, 2fr)
+    minmax(300px, 1fr);
+
+  gap: 24px;
+
+  width: min(
+    1500px,
+    calc(100% - 48px)
+  );
+
+  margin: 24px auto 40px;
 }
 
-.map-region {
+
+.map-panel,
+.research-panel,
+.journeys-panel,
+.evidence-panel,
+.unmapped-panel {
   min-width: 0;
-  position: relative;
-  border-right: 1px solid var(--border);
-}
 
-#map {
-  width: 100%;
-  height: 100%;
-}
+  background: var(--surface);
 
-.map-legend {
-  position: absolute;
-  z-index: 2;
-  left: 16px;
-  bottom: 32px;
-  padding: 9px 12px;
-  background: rgb(255 255 255 / 94%);
   border: 1px solid var(--border);
-  border-radius: 7px;
+  border-radius: var(--radius);
+
   box-shadow: var(--shadow);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.82rem;
 }
 
-.legend-marker {
-  width: 13px;
-  height: 13px;
-  background: var(--accent);
-  border: 2px solid #ffffff;
-  border-radius: 50%;
-  box-shadow: 0 0 0 1px var(--accent-dark);
+
+.map-panel {
+  grid-column: 1;
+
+  overflow: hidden;
 }
+
 
 .research-panel {
-  overflow-y: auto;
-  background: var(--surface);
+  grid-column: 2;
+
+  padding: 22px;
 }
 
-.panel-section {
-  padding: 28px;
-  border-bottom: 1px solid var(--border);
+
+.journeys-panel,
+.evidence-panel,
+.unmapped-panel {
+  grid-column: 1 / -1;
+
+  padding: 22px;
 }
 
-.panel-section h2 {
-  margin: 6px 0 14px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.65rem;
-  line-height: 1.15;
+
+/*
+ * Section headings
+ */
+
+.section-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 20px 22px 14px;
 }
+
+
+.research-panel .section-heading,
+.journeys-panel .section-heading,
+.evidence-panel .section-heading,
+.unmapped-panel .section-heading {
+  padding: 0 0 14px;
+}
+
+
+.section-heading h2 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.55rem;
+}
+
 
 .section-introduction {
+  max-width: 900px;
+
+  margin: 0 0 20px;
+
   color: var(--text-muted);
-  line-height: 1.55;
 }
 
-.place-summary {
-  padding: 14px;
-  margin: 18px 0;
-  background: var(--surface-muted);
-  border: 1px solid var(--border);
-  border-radius: 8px;
+
+/*
+ * Map
+ */
+
+.map {
+  width: 100%;
+  height: 560px;
+  min-height: 420px;
+
+  background: #dfe5df;
 }
 
-.metadata-list {
+
+.map-note {
   margin: 0;
-  display: grid;
-  grid-template-columns: minmax(115px, auto) 1fr;
-  gap: 8px 14px;
-}
 
-.metadata-list dt {
-  color: var(--text-muted);
-  font-size: 0.82rem;
-  font-weight: 700;
-}
+  padding: 12px 20px;
 
-.metadata-list dd {
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-.editorial-note {
-  padding: 13px 15px;
-  background: var(--accent-light);
-  border-left: 4px solid var(--accent);
-  line-height: 1.55;
-}
-
-.passages-heading {
-  margin-top: 28px;
-  font-family: Georgia, "Times New Roman", serif;
-}
-
-.passage-card {
-  margin-top: 16px;
-  padding: 16px;
-  background: var(--surface-muted);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-}
-
-.passage-card h4 {
-  margin: 0 0 4px;
-  font-size: 1rem;
-}
-
-.passage-metadata {
-  margin: 0 0 12px;
-  color: var(--text-muted);
-  font-size: 0.78rem;
-}
-
-.passage-text {
-  margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  line-height: 1.62;
-}
-
-.passage-note {
-  margin: 12px 0 0;
-  padding-top: 10px;
-  color: var(--text-muted);
+  background: var(--surface-soft);
   border-top: 1px solid var(--border);
+
+  color: var(--text-muted);
+
   font-size: 0.82rem;
-  line-height: 1.45;
 }
 
-.unmapped-card {
-  margin-top: 14px;
-  padding: 14px;
-  background: var(--warning-background);
-  border: 1px solid var(--warning-border);
-  border-radius: 8px;
-}
 
-.unmapped-card h3 {
-  margin: 0 0 8px;
-  font-family: Georgia, "Times New Roman", serif;
-}
+/*
+ * Map legend
+ */
 
-.unmapped-card p {
-  margin: 6px 0 0;
-  line-height: 1.5;
-}
-
-.unmapped-status {
-  color: var(--text-muted);
-  font-size: 0.8rem;
-}
-
-.error-message {
-  padding: 12px 24px;
-  background: var(--error-background);
-  border-bottom: 1px solid var(--error-border);
-  color: #782a26;
-}
-
-.noscript-message {
-  margin: 20px;
-  padding: 16px;
-  background: var(--error-background);
-  border: 1px solid var(--error-border);
-}
-
-.maplibregl-popup-content {
-  font-family:
-    Inter,
-    ui-sans-serif,
-    system-ui,
-    sans-serif;
-}
-
-.maplibregl-popup-content strong {
-  font-family: Georgia, "Times New Roman", serif;
-}
-
-@media (max-width: 850px) {
-  .site-header {
-    min-height: auto;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .data-status {
-    text-align: left;
-  }
-
-  .application {
-    height: auto;
-    min-height: 0;
-    grid-template-columns: 1fr;
-  }
-
-  .map-region {
-    height: 55vh;
-    min-height: 420px;
-    border-right: 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .research-panel {
-    overflow: visible;
-  }
-}
-.journey-card {
-  margin-top: 18px;
-  padding: 18px;
-  background: var(--surface-muted);
-  border: 1px solid var(--border);
-  border-radius: 9px;
-}
-
-.journey-card h3 {
-  margin: 4px 0 10px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.25rem;
-  line-height: 1.25;
-}
-
-.journey-travelers {
-  margin: 0 0 12px;
-  color: var(--text-muted);
-  font-size: 0.88rem;
-  line-height: 1.45;
-}
-
-.badge-row {
-  margin: 10px 0 14px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-}
-
-.status-badge {
-  padding: 4px 8px;
-  background: var(--accent-light);
-  border: 1px solid #b7d0c5;
-  border-radius: 999px;
-  color: var(--accent-dark);
-  font-size: 0.72rem;
-  font-weight: 700;
-}
-
-.status-badge.unmapped {
-  background: var(--warning-background);
-  border-color: var(--warning-border);
-  color: #6b5612;
-}
-
-.journey-note {
-  margin: 12px 0 18px;
-  line-height: 1.5;
-}
-
-.itinerary {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.itinerary-leg {
-  position: relative;
-  margin: 0;
-  padding: 0 0 22px 30px;
-  border-left: 2px solid var(--accent-light);
-}
-
-.itinerary-leg:last-child {
-  padding-bottom: 0;
-  border-left-color: transparent;
-}
-
-.itinerary-leg::before {
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: -7px;
-  width: 12px;
-  height: 12px;
-  background: var(--surface);
-  border: 3px solid var(--accent);
-  border-radius: 50%;
-}
-
-.leg-heading {
-  margin: 0 0 7px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1rem;
-}
-
-.leg-metadata {
-  margin: 0 0 8px;
-  color: var(--text-muted);
-  font-size: 0.78rem;
-}
-
-.leg-note {
-  margin: 0;
-  font-size: 0.86rem;
-  line-height: 1.5;
-}
-
-.place-focus-button {
-  margin-top: 9px;
-  padding: 6px 10px;
-  background: var(--surface);
-  border: 1px solid var(--accent);
-  border-radius: 6px;
-  color: var(--accent-dark);
-  cursor: pointer;
-  font: inherit;
-  font-size: 0.78rem;
-  font-weight: 700;
-}
-
-.place-focus-button:hover,
-.place-focus-button:focus-visible {
-  background: var(--accent-light);
-}
 .map-legend {
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  gap: 7px;
+
+  padding: 8px 10px;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.94
+  );
+
+  border: 1px solid var(--border);
+  border-radius: 7px;
+
+  font-size: 0.76rem;
 }
+
 
 .legend-row {
   display: flex;
   align-items: center;
+
   gap: 8px;
 }
 
+
+.legend-marker {
+  display: inline-block;
+
+  width: 11px;
+  height: 11px;
+
+  background: var(--accent);
+
+  border: 2px solid #f6f1e6;
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 1px var(--accent);
+}
+
+
 .legend-route {
   display: inline-block;
-  width: 28px;
+
+  width: 30px;
   height: 0;
-  border-top: 3px solid #8a6742;
+
+  border-top:
+    3px solid var(--route);
 }
+
 
 .legend-route.schematic {
   border-top-style: dashed;
+}
+
+
+/*
+ * Research panel
+ */
+
+.empty-state {
+  margin: 0;
+
+  color: var(--text-muted);
+
+  font-style: italic;
+}
+
+
+.place-name,
+.unmapped-place-name,
+.journey-title,
+.evidence-route-heading {
+  margin-top: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+}
+
+
+.metadata-list {
+  margin: 18px 0 0;
+}
+
+
+.metadata-row {
+  display: grid;
+
+  grid-template-columns:
+    minmax(110px, 0.8fr)
+    minmax(0, 1.5fr);
+
+  gap: 12px;
+
+  padding: 9px 0;
+
+  border-bottom:
+    1px solid var(--border);
+}
+
+
+.metadata-label {
+  color: var(--text-muted);
+
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+
+.metadata-value {
+  margin: 0;
+
+  overflow-wrap: anywhere;
+}
+
+
+.panel-subheading,
+.evidence-subheading {
+  margin:
+    22px
+    0
+    8px;
+
+  color: var(--accent-dark);
+
+  font-size: 1rem;
+}
+
+
+.editorial-note p {
+  margin-bottom: 0;
+}
+
+
+/*
+ * Passage cards
+ */
+
+.passage-card,
+.movement-passage {
+  margin-top: 14px;
+
+  padding: 14px 16px;
+
+  background: var(--surface-soft);
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 8px;
+}
+
+
+.passage-label,
+.movement-passage-label {
+  margin-bottom: 8px;
+
+  color: var(--accent);
+
+  font-size: 0.77rem;
+  font-weight: 700;
+
+  letter-spacing: 0.03em;
+}
+
+
+.passage-text,
+.movement-passage-text {
+  margin: 0;
+
+  line-height: 1.65;
+}
+
+
+.passage-id,
+.movement-passage-id {
+  display: block;
+
+  margin-top: 10px;
+
+  color: var(--text-muted);
+
+  font-size: 0.73rem;
+
+  overflow-wrap: anywhere;
+}
+
+
+/*
+ * Journey cards
+ */
+
+.journey-card {
+  padding: 20px;
+
+  background: var(--surface-soft);
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 9px;
+}
+
+
+.journey-card
++ .journey-card {
+  margin-top: 18px;
+}
+
+
+.journey-title {
+  margin-bottom: 8px;
+
+  font-size: 1.35rem;
+}
+
+
+.journey-travelers,
+.journey-note {
+  color: var(--text-muted);
+}
+
+
+.journey-itinerary-heading {
+  margin:
+    22px
+    0
+    10px;
+
+  color: var(--accent-dark);
+}
+
+
+.journey-itinerary {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+
+/*
+ * Journey legs
+ */
+
+.itinerary-leg {
+  position: relative;
+
+  margin-top: 12px;
+
+  padding: 16px;
+
+  background: var(--surface);
+
+  border:
+    1px solid var(--border);
+
+  border-left:
+    4px solid var(--accent);
+
+  border-radius: 8px;
+}
+
+
+.leg-heading {
+  margin: 0 0 6px;
+
+  font-size: 1.03rem;
+}
+
+
+.leg-metadata {
+  margin: 0;
+
+  color: var(--text-muted);
+
+  font-size: 0.82rem;
+}
+
+
+.leg-note {
+  margin:
+    10px
+    0
+    0;
+}
+
+
+/*
+ * Badges
+ */
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin: 12px 0;
+}
+
+
+.badge {
+  display: inline-block;
+
+  padding: 4px 8px;
+
+  background: var(--accent-soft);
+
+  border-radius: 999px;
+
+  color: var(--accent-dark);
+
+  font-size: 0.73rem;
+  font-weight: 600;
+}
+
+
+/*
+ * Journey/place buttons
+ */
+
+.journey-button-row,
+.journey-action-row {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 12px;
+}
+
+
+.place-focus-button,
+.journey-route-focus,
+.journey-evidence-button {
+  padding: 7px 11px;
+
+  background: transparent;
+
+  border:
+    1px solid var(--accent);
+
+  border-radius: 6px;
+
+  color: var(--accent-dark);
+
+  font-size: 0.82rem;
+
+  cursor: pointer;
+
+  transition:
+    background 120ms ease,
+    color 120ms ease;
+}
+
+
+.place-focus-button:hover,
+.journey-route-focus:hover,
+.journey-evidence-button:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+
+.place-focus-button:focus-visible,
+.journey-route-focus:focus-visible,
+.journey-evidence-button:focus-visible {
+  outline:
+    3px solid
+    rgba(41, 76, 58, 0.25);
+
+  outline-offset: 2px;
+}
+
+
+.journey-route-focus {
+  margin-top: 0;
+}
+
+
+/*
+ * Movement evidence
+ */
+
+.evidence-route-heading {
+  margin-bottom: 6px;
+
+  font-size: 1.3rem;
+}
+
+
+.evidence-metadata {
+  margin-top: 0;
+
+  color: var(--text-muted);
+
+  font-size: 0.86rem;
+}
+
+
+.evidence-note {
+  max-width: 900px;
+
+  line-height: 1.6;
+}
+
+
+/*
+ * Unmapped places
+ */
+
+#unmapped-places {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(280px, 1fr)
+    );
+
+  gap: 16px;
+}
+
+
+.unmapped-card {
+  min-width: 0;
+
+  padding: 17px;
+
+  background: var(--surface-soft);
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 8px;
+}
+
+
+.unmapped-place-name {
+  margin-bottom: 10px;
+
+  font-size: 1.2rem;
+}
+
+
+.unmapped-note {
+  color: var(--text-muted);
+}
+
+
+/*
+ * Errors
+ */
+
+.error-message {
+  padding: 12px 14px;
+
+  background: #fff0ee;
+
+  border:
+    1px solid #d9a7a0;
+
+  border-radius: 7px;
+
+  color: #6d2821;
+}
+
+
+/*
+ * Footer
+ */
+
+.site-footer {
+  padding:
+    22px
+    32px
+    32px;
+
+  color: var(--text-muted);
+
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+
+.site-footer p {
+  max-width: 900px;
+
+  margin: 0 auto;
+}
+
+
+/*
+ * MapLibre adjustments
+ */
+
+.maplibregl-popup-content {
+  max-width: 300px;
+
+  border-radius: 8px;
+
+  line-height: 1.4;
+}
+
+
+.maplibregl-ctrl-group {
+  border-radius: 7px;
+}
+
+
+/*
+ * Tablet layout
+ */
+
+@media (
+  max-width: 950px
+) {
+  .app-layout {
+    grid-template-columns: 1fr;
+
+    width:
+      min(
+        100% - 28px,
+        900px
+      );
+  }
+
+  .map-panel,
+  .research-panel,
+  .journeys-panel,
+  .evidence-panel,
+  .unmapped-panel {
+    grid-column: 1;
+  }
+
+  .map {
+    height: 500px;
+  }
+}
+
+
+/*
+ * Small-screen layout
+ */
+
+@media (
+  max-width: 600px
+) {
+  .site-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    padding: 20px;
+  }
+
+  .status {
+    text-align: left;
+  }
+
+  .app-layout {
+    width:
+      calc(100% - 20px);
+
+    gap: 14px;
+
+    margin-top: 14px;
+  }
+
+  .section-heading {
+    flex-direction: column;
+  }
+
+  .map {
+    height: 430px;
+  }
+
+  .metadata-row {
+    grid-template-columns: 1fr;
+
+    gap: 3px;
+  }
+
+  .research-panel,
+  .journeys-panel,
+  .evidence-panel,
+  .unmapped-panel {
+    padding: 16px;
+  }
 }
