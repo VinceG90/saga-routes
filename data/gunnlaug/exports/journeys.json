@@ -54,7 +54,18 @@
           "chapter_title": "Draumr Þorsteins Egilssonar.",
           "passage_type": "prose",
           "sequence_in_document": 6,
-          "text": "Um várit einn dag ræddi Þorsteinn um við Bergfinn, ef hann vildi ríða með honum upp undir Valfell. Þar var þá þingstöð þeira Borgfirðinga. En Þorsteini var sagt, at fallnir væri búðarveggir hans. Austmaðrinn kveðst þat vilja, ok riðu þeir heiman of daginn þrír saman ok húskarl Þorsteins, þar til er þeir koma til bæjar þess, er at Grenjum heitir. Þar bjó einn maðr félítill, er Atli hét. Hann var landseti Þorsteins, ok beiddi Þorsteinn Atla, at hann færi til starfs með þeim ok hefði pál ok reku. Hann gerði svá. Ok er þeir koma upp undir Valfell til búðartóftanna, þá tóku þeir til starfs allir ok færðu út veggina. Veðrit var heitt af sólu, ok varð þeim Þorsteini ok Austmanni erfitt."
+          "text": "Um várit einn dag ræddi Þorsteinn um við Bergfinn, ef hann vildi ríða með honum upp undir Valfell. Þar var þá þingstöð þeira Borgfirðinga. En Þorsteini var sagt, at fallnir væri búðarveggir hans. Austmaðrinn kveðst þat vilja, ok riðu þeir heiman of daginn þrír saman ok húskarl Þorsteins, þar til er þeir koma til bæjar þess, er at Grenjum heitir. Þar bjó einn maðr félítill, er Atli hét. Hann var landseti Þorsteins, ok beiddi Þorsteinn Atla, at hann færi til starfs með þeim ok hefði pál ok reku. Hann gerði svá. Ok er þeir koma upp undir Valfell til búðartóftanna, þá tóku þeir til starfs allir ok færðu út veggina. Veðrit var heitt af sólu, ok varð þeim Þorsteini ok Austmanni erfitt.",
+          "source": {
+            "title": "Gunnlaugs saga ormstungu",
+            "language_code": "on",
+            "language": "Old Norse",
+            "sagadb_editor": "Sveinbjorn Thordarson",
+            "translator": null,
+            "translation_date": null,
+            "basename": "gunnlaugs_saga_ormstungu.on",
+            "source_file": "data/gunnlaug/source/sagadb/gunnlaugs_saga_ormstungu.on.xml",
+            "sha256": "c9519ba24c15acc0ef060e74e13fd5c6b1f97d0cd9ec2d117f33185d6240c0f1"
+          }
         },
         {
           "id": "gunnlaug-en-c02-p003",
@@ -64,7 +75,18 @@
           "chapter_title": "Of Thorstein's Dream",
           "passage_type": "prose",
           "sequence_in_document": 6,
-          "text": "One day in spring-tide Thorstein asked Bergfinn if he would ride with him up to Hawkfell, where at that time was the Thing-stead of the Burg-firthers; for Thorstein had been told that the walls of his booth had fallen in. The Eastman said he had good will to go, so that day they rode, some three together, from home, and the house-carles of Thorstein withal, till they came up under Hawkfell to a farmstead called Foxholes. There dwelt a man of small wealth called Atli, who was Thorstein's tenant. Thorstein bade him come and work with them, and bring with him hoe and spade. This he did, and when they came to the tofts of the booth, they set to work all of them, and did out the walls."
+          "text": "One day in spring-tide Thorstein asked Bergfinn if he would ride with him up to Hawkfell, where at that time was the Thing-stead of the Burg-firthers; for Thorstein had been told that the walls of his booth had fallen in. The Eastman said he had good will to go, so that day they rode, some three together, from home, and the house-carles of Thorstein withal, till they came up under Hawkfell to a farmstead called Foxholes. There dwelt a man of small wealth called Atli, who was Thorstein's tenant. Thorstein bade him come and work with them, and bring with him hoe and spade. This he did, and when they came to the tofts of the booth, they set to work all of them, and did out the walls.",
+          "source": {
+            "title": "The Saga of Gunnlaug the Worm-Tongue and Rafn the Skald",
+            "language_code": "en",
+            "language": "English",
+            "sagadb_editor": "Sveinbjorn Thordarson",
+            "translator": "William Morris & Eirikr Magnusson",
+            "translation_date": "1901",
+            "basename": "gunnlaugs_saga_ormstungu.en",
+            "source_file": "data/gunnlaug/source/sagadb/gunnlaugs_saga_ormstungu.en.xml",
+            "sha256": "e68e6f52539db42bd8151fb068c42bb78976e59dc4c04164232ba7dfd397436b"
+          }
         }
       ],
       "leg_count": 2,
@@ -141,7 +163,18 @@
               "chapter_title": "Draumr Þorsteins Egilssonar.",
               "passage_type": "prose",
               "sequence_in_document": 6,
-              "text": "Um várit einn dag ræddi Þorsteinn um við Bergfinn, ef hann vildi ríða með honum upp undir Valfell. Þar var þá þingstöð þeira Borgfirðinga. En Þorsteini var sagt, at fallnir væri búðarveggir hans. Austmaðrinn kveðst þat vilja, ok riðu þeir heiman of daginn þrír saman ok húskarl Þorsteins, þar til er þeir koma til bæjar þess, er at Grenjum heitir. Þar bjó einn maðr félítill, er Atli hét. Hann var landseti Þorsteins, ok beiddi Þorsteinn Atla, at hann færi til starfs með þeim ok hefði pál ok reku. Hann gerði svá. Ok er þeir koma upp undir Valfell til búðartóftanna, þá tóku þeir til starfs allir ok færðu út veggina. Veðrit var heitt af sólu, ok varð þeim Þorsteini ok Austmanni erfitt."
+              "text": "Um várit einn dag ræddi Þorsteinn um við Bergfinn, ef hann vildi ríða með honum upp undir Valfell. Þar var þá þingstöð þeira Borgfirðinga. En Þorsteini var sagt, at fallnir væri búðarveggir hans. Austmaðrinn kveðst þat vilja, ok riðu þeir heiman of daginn þrír saman ok húskarl Þorsteins, þar til er þeir koma til bæjar þess, er at Grenjum heitir. Þar bjó einn maðr félítill, er Atli hét. Hann var landseti Þorsteins, ok beiddi Þorsteinn Atla, at hann færi til starfs með þeim ok hefði pál ok reku. Hann gerði svá. Ok er þeir koma upp undir Valfell til búðartóftanna, þá tóku þeir til starfs allir ok færðu út veggina. Veðrit var heitt af sólu, ok varð þeim Þorsteini ok Austmanni erfitt.",
+              "source": {
+                "title": "Gunnlaugs saga ormstungu",
+                "language_code": "on",
+                "language": "Old Norse",
+                "sagadb_editor": "Sveinbjorn Thordarson",
+                "translator": null,
+                "translation_date": null,
+                "basename": "gunnlaugs_saga_ormstungu.on",
+                "source_file": "data/gunnlaug/source/sagadb/gunnlaugs_saga_ormstungu.on.xml",
+                "sha256": "c9519ba24c15acc0ef060e74e13fd5c6b1f97d0cd9ec2d117f33185d6240c0f1"
+              }
             },
             {
               "id": "gunnlaug-en-c02-p003",
@@ -151,7 +184,18 @@
               "chapter_title": "Of Thorstein's Dream",
               "passage_type": "prose",
               "sequence_in_document": 6,
-              "text": "One day in spring-tide Thorstein asked Bergfinn if he would ride with him up to Hawkfell, where at that time was the Thing-stead of the Burg-firthers; for Thorstein had been told that the walls of his booth had fallen in. The Eastman said he had good will to go, so that day they rode, some three together, from home, and the house-carles of Thorstein withal, till they came up under Hawkfell to a farmstead called Foxholes. There dwelt a man of small wealth called Atli, who was Thorstein's tenant. Thorstein bade him come and work with them, and bring with him hoe and spade. This he did, and when they came to the tofts of the booth, they set to work all of them, and did out the walls."
+              "text": "One day in spring-tide Thorstein asked Bergfinn if he would ride with him up to Hawkfell, where at that time was the Thing-stead of the Burg-firthers; for Thorstein had been told that the walls of his booth had fallen in. The Eastman said he had good will to go, so that day they rode, some three together, from home, and the house-carles of Thorstein withal, till they came up under Hawkfell to a farmstead called Foxholes. There dwelt a man of small wealth called Atli, who was Thorstein's tenant. Thorstein bade him come and work with them, and bring with him hoe and spade. This he did, and when they came to the tofts of the booth, they set to work all of them, and did out the walls.",
+              "source": {
+                "title": "The Saga of Gunnlaug the Worm-Tongue and Rafn the Skald",
+                "language_code": "en",
+                "language": "English",
+                "sagadb_editor": "Sveinbjorn Thordarson",
+                "translator": "William Morris & Eirikr Magnusson",
+                "translation_date": "1901",
+                "basename": "gunnlaugs_saga_ormstungu.en",
+                "source_file": "data/gunnlaug/source/sagadb/gunnlaugs_saga_ormstungu.en.xml",
+                "sha256": "e68e6f52539db42bd8151fb068c42bb78976e59dc4c04164232ba7dfd397436b"
+              }
             }
           ],
           "alignment_id": "gunnlaug-a0003",
@@ -238,7 +282,18 @@
               "chapter_title": "Draumr Þorsteins Egilssonar.",
               "passage_type": "prose",
               "sequence_in_document": 6,
-              "text": "Um várit einn dag ræddi Þorsteinn um við Bergfinn, ef hann vildi ríða með honum upp undir Valfell. Þar var þá þingstöð þeira Borgfirðinga. En Þorsteini var sagt, at fallnir væri búðarveggir hans. Austmaðrinn kveðst þat vilja, ok riðu þeir heiman of daginn þrír saman ok húskarl Þorsteins, þar til er þeir koma til bæjar þess, er at Grenjum heitir. Þar bjó einn maðr félítill, er Atli hét. Hann var landseti Þorsteins, ok beiddi Þorsteinn Atla, at hann færi til starfs með þeim ok hefði pál ok reku. Hann gerði svá. Ok er þeir koma upp undir Valfell til búðartóftanna, þá tóku þeir til starfs allir ok færðu út veggina. Veðrit var heitt af sólu, ok varð þeim Þorsteini ok Austmanni erfitt."
+              "text": "Um várit einn dag ræddi Þorsteinn um við Bergfinn, ef hann vildi ríða með honum upp undir Valfell. Þar var þá þingstöð þeira Borgfirðinga. En Þorsteini var sagt, at fallnir væri búðarveggir hans. Austmaðrinn kveðst þat vilja, ok riðu þeir heiman of daginn þrír saman ok húskarl Þorsteins, þar til er þeir koma til bæjar þess, er at Grenjum heitir. Þar bjó einn maðr félítill, er Atli hét. Hann var landseti Þorsteins, ok beiddi Þorsteinn Atla, at hann færi til starfs með þeim ok hefði pál ok reku. Hann gerði svá. Ok er þeir koma upp undir Valfell til búðartóftanna, þá tóku þeir til starfs allir ok færðu út veggina. Veðrit var heitt af sólu, ok varð þeim Þorsteini ok Austmanni erfitt.",
+              "source": {
+                "title": "Gunnlaugs saga ormstungu",
+                "language_code": "on",
+                "language": "Old Norse",
+                "sagadb_editor": "Sveinbjorn Thordarson",
+                "translator": null,
+                "translation_date": null,
+                "basename": "gunnlaugs_saga_ormstungu.on",
+                "source_file": "data/gunnlaug/source/sagadb/gunnlaugs_saga_ormstungu.on.xml",
+                "sha256": "c9519ba24c15acc0ef060e74e13fd5c6b1f97d0cd9ec2d117f33185d6240c0f1"
+              }
             },
             {
               "id": "gunnlaug-en-c02-p003",
@@ -248,7 +303,18 @@
               "chapter_title": "Of Thorstein's Dream",
               "passage_type": "prose",
               "sequence_in_document": 6,
-              "text": "One day in spring-tide Thorstein asked Bergfinn if he would ride with him up to Hawkfell, where at that time was the Thing-stead of the Burg-firthers; for Thorstein had been told that the walls of his booth had fallen in. The Eastman said he had good will to go, so that day they rode, some three together, from home, and the house-carles of Thorstein withal, till they came up under Hawkfell to a farmstead called Foxholes. There dwelt a man of small wealth called Atli, who was Thorstein's tenant. Thorstein bade him come and work with them, and bring with him hoe and spade. This he did, and when they came to the tofts of the booth, they set to work all of them, and did out the walls."
+              "text": "One day in spring-tide Thorstein asked Bergfinn if he would ride with him up to Hawkfell, where at that time was the Thing-stead of the Burg-firthers; for Thorstein had been told that the walls of his booth had fallen in. The Eastman said he had good will to go, so that day they rode, some three together, from home, and the house-carles of Thorstein withal, till they came up under Hawkfell to a farmstead called Foxholes. There dwelt a man of small wealth called Atli, who was Thorstein's tenant. Thorstein bade him come and work with them, and bring with him hoe and spade. This he did, and when they came to the tofts of the booth, they set to work all of them, and did out the walls.",
+              "source": {
+                "title": "The Saga of Gunnlaug the Worm-Tongue and Rafn the Skald",
+                "language_code": "en",
+                "language": "English",
+                "sagadb_editor": "Sveinbjorn Thordarson",
+                "translator": "William Morris & Eirikr Magnusson",
+                "translation_date": "1901",
+                "basename": "gunnlaugs_saga_ormstungu.en",
+                "source_file": "data/gunnlaug/source/sagadb/gunnlaugs_saga_ormstungu.en.xml",
+                "sha256": "e68e6f52539db42bd8151fb068c42bb78976e59dc4c04164232ba7dfd397436b"
+              }
             }
           ],
           "alignment_id": "gunnlaug-a0003",

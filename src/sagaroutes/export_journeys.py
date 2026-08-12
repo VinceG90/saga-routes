@@ -156,12 +156,35 @@ def export_place(
 
 def export_passage(
     passage: dict[str, Any],
+    source_index: dict[str, dict[str, Any]],
 ) -> dict[str, Any]:
-    """Return selected textual evidence fields."""
+    """Return textual evidence with source provenance."""
+
+    language_code = passage.get("language_code")
+
+    source = source_index.get(language_code)
+
+    if source is None:
+        raise ExportError(
+            f"{passage.get('id')}: "
+            f"no source record for language "
+            f"{language_code}"
+        )
+
+    upstream_metadata = source.get(
+        "upstream_metadata",
+        {},
+    )
+
+    if not isinstance(
+        upstream_metadata,
+        dict,
+    ):
+        upstream_metadata = {}
 
     return {
         "id": passage.get("id"),
-        "language_code": passage.get("language_code"),
+        "language_code": language_code,
         "language": passage.get("language"),
         "chapter_number": passage.get("chapter_number"),
         "chapter_title": passage.get("chapter_title"),
@@ -170,8 +193,24 @@ def export_passage(
             "sequence_in_document"
         ),
         "text": passage.get("text"),
+        "source": {
+            "title": source.get("title"),
+            "language_code": source.get(
+                "language_code"
+            ),
+            "language": source.get("language"),
+            "sagadb_editor": source.get("editor"),
+            "translator": upstream_metadata.get(
+                "trans"
+            ),
+            "translation_date": upstream_metadata.get(
+                "trans_date"
+            ),
+            "basename": source.get("basename"),
+            "source_file": source.get("source_file"),
+            "sha256": source.get("sha256"),
+        },
     }
-
 
 def build_export() -> dict[str, Any]:
     """Build the complete enriched journey export."""
@@ -200,6 +239,10 @@ def build_export() -> dict[str, Any]:
         PASSAGES_FILE,
         "passages",
     )
+    sources = require_records(
+        PASSAGES_FILE,
+        "sources",
+    )
 
     character_index = build_index(
         characters,
@@ -225,6 +268,29 @@ def build_export() -> dict[str, Any]:
         passages,
         "passage",
     )
+    source_index: dict[str, dict[str, Any]] = {}
+
+    for source in sources:
+        language_code = source.get(
+            "language_code"
+        )
+
+        if (
+            not isinstance(language_code, str)
+            or not language_code
+        ):
+            raise ExportError(
+                "Source record has no valid "
+                "language_code"
+            )
+
+        if language_code in source_index:
+            raise ExportError(
+                "Multiple source records found "
+                f"for language {language_code}"
+            )
+
+        source_index[language_code] = source
 
     exported_journeys: list[dict[str, Any]] = []
 
@@ -260,7 +326,8 @@ def build_export() -> dict[str, Any]:
                     passage_index,
                     passage_id,
                     "passage",
-                )
+                ),
+                source_index,
             )
             for passage_id in passage_ids
         ]
@@ -311,11 +378,14 @@ def build_export() -> dict[str, Any]:
                         passage_index,
                         passage_id,
                         "passage",
-                    )
+                    ),
+                    source_index,
                 )
-                for passage_id in leg.get("passage_ids", [])
+                for passage_id in leg.get(
+                    "passage_ids",
+                    [],
+                )
             ]
-
             exported_legs.append(
                 {
                     "id": leg.get("id"),

@@ -743,13 +743,77 @@ const label = makeElement(
       "movement-passage-id",
       passage.id
     );
+const source =
+  passage.source
+  && typeof passage.source === "object"
+    ? passage.source
+    : null;
 
-    article.append(
-      label,
-      text,
-      id
+let sourceBlock = null;
+
+if (source) {
+  sourceBlock = makeElement(
+    "div",
+    "movement-source"
+  );
+
+  sourceBlock.append(
+    makeElement(
+      "p",
+      "movement-source-title",
+      `Source: ${
+        source.title
+        || "Source title not recorded"
+      }`
+    )
+  );
+
+  const sourceDetails = [];
+
+  if (source.translator) {
+    sourceDetails.push(
+      `Translator: ${source.translator}`
     );
+  }
 
+  if (source.translation_date) {
+    sourceDetails.push(
+      `Translation date: ${
+        source.translation_date
+      }`
+    );
+  }
+
+  if (source.sagadb_editor) {
+    sourceDetails.push(
+      `SagaDB editor: ${
+        source.sagadb_editor
+      }`
+    );
+  }
+
+  if (sourceDetails.length > 0) {
+    sourceBlock.append(
+      makeElement(
+        "p",
+        "movement-source-details",
+        sourceDetails.join(" · ")
+      )
+    );
+  }
+}
+
+
+article.append(
+  label,
+  text
+);
+
+if (sourceBlock) {
+  article.append(sourceBlock);
+}
+
+article.append(id);
     container.append(article);
   }
 }
