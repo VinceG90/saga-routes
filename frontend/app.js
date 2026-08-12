@@ -575,12 +575,17 @@ function createJourneyRouteFocusButton(
     "click",
     () => {
       focusJourneyRoute(feature);
+
+      window.scrollTo({
+       top: 0,
+       behavior: "smooth"
+
+      });
     }
   );
 
   return button;
 }
-
 
 function renderMovementEvidence(leg) {
   const container =
@@ -604,29 +609,47 @@ function renderMovementEvidence(leg) {
     `${originName} → ${destinationName}`
   );
 
-  const metadata = makeElement(
-    "p",
-    "evidence-metadata",
-    [
-      `Route: ${
-        humanize(
-          leg.route_classification
-        )
-      }`,
-
-      `Travel: ${
-        humanize(
-          leg.travel_mode
-        )
-      }`,
-
-      `Display: ${
-        humanize(
-          leg.spatial_display_status
-        )
-      }`
-    ].join(" · ")
+  const routeFeature =
+  journeyRouteIndex.get(
+    leg.id
   );
+
+let displayDescription =
+  "No mapped route";
+
+if (routeFeature) {
+  const displayType =
+    routeFeature.properties
+      ?.display_type;
+
+  if (displayType === "schematic") {
+    displayDescription =
+      "Schematic connection";
+  } else if (displayType === "curated") {
+    displayDescription =
+      "Reviewed route geometry";
+  }
+}
+
+ const metadata = makeElement(
+  "p",
+  "evidence-metadata",
+  [
+    `Route: ${
+      humanize(
+        leg.route_classification
+      )
+    }`,
+
+    `Travel: ${
+      humanize(
+        leg.travel_mode
+      )
+    }`,
+
+    `Map display: ${displayDescription}`
+  ].join(" · ")
+ );
 
   const noteHeading =
     makeElement(
