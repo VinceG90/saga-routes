@@ -705,17 +705,32 @@ if (routeFeature) {
       "movement-passage"
     );
 
-    const label = makeElement(
-      "div",
-      "movement-passage-label",
-      `${
-        languageName(
-          passage.language
-        )
-      } · Chapter ${
-        passage.chapter_number
-      }`
-    );
+    const passageLanguage =
+  passage.language
+  || languageName(
+    passage.language_code
+  );
+
+const chapterTitle =
+  passage.chapter_title
+    ? ` — ${passage.chapter_title}`
+    : "";
+
+const passageType =
+  passage.passage_type
+    ? ` · ${humanize(
+        passage.passage_type
+      )}`
+    : "";
+
+const label = makeElement(
+  "div",
+  "movement-passage-label",
+  `${passageLanguage} · `
+    + `Chapter ${passage.chapter_number}`
+    + `${chapterTitle}`
+    + `${passageType}`
+);
 
     const text = makeElement(
       "p",
