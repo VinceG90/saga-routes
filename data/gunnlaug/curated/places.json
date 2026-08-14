@@ -90,6 +90,23 @@
         "geonames": "3416928"
       },
       "editorial_note": "The Árni Magnússon Institute identifies the Grenjar named in Gunnlaugs saga with the farm historically in Álftaneshrepp and now in Borgarbyggð. The coordinates represent the modern farm location and do not claim that the medieval farm buildings occupied precisely the same point."
+    },
+    {
+      "id": "gunnlaug-place-borgfirdingar-assembly-site-valfell",
+      "preferred_name": "Borgfirðingar assembly site beneath Valfell",
+      "alternate_names": [
+        "Borgfirðingar þingstöð",
+        "Thing-stead of the Burg-firthers"
+      ],
+      "feature_type": "assembly_site",
+      "country_code": "IS",
+      "broader_region": "Borgarfjörður, western Iceland",
+      "identification_status": "probable",
+      "spatial_certainty": "low",
+      "geometry": null,
+      "coordinate_source_id": null,
+      "authority_ids": {},
+      "editorial_note": "The saga describes the Borgfirðingar assembly site and booth remains beneath Valfell. The Tandrasel place-name record documents Þinghóll and ancient booth ruins in the area of Kambur, which is probably the mountain formerly called Valfell. SagaRoutes models the assembly site as a separate geographic entity from the Valfell/Kambur landform. Exact geometry is withheld pending a defensible identification of the assembly remains."
     }
   ]
 }

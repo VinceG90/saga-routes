@@ -2,8 +2,68 @@
   "schema_version": "0.1.0",
   "work_id": "gunnlaug",
   "description": "Saga places retained without map geometry because their precise historic locations remain unresolved or insufficiently supported.",
-  "place_count": 2,
+  "place_count": 3,
   "places": [
+    {
+      "id": "gunnlaug-place-borgfirdingar-assembly-site-valfell",
+      "preferred_name": "Borgfirðingar assembly site beneath Valfell",
+      "alternate_names": [
+        "Borgfirðingar þingstöð",
+        "Thing-stead of the Burg-firthers"
+      ],
+      "feature_type": "assembly_site",
+      "country_code": "IS",
+      "broader_region": "Borgarfjörður, western Iceland",
+      "identification_status": "probable",
+      "spatial_certainty": "low",
+      "geometry": null,
+      "coordinate_source_id": null,
+      "authority_ids": {},
+      "editorial_note": "The saga describes the Borgfirðingar assembly site and booth remains beneath Valfell. The Tandrasel place-name record documents Þinghóll and ancient booth ruins in the area of Kambur, which is probably the mountain formerly called Valfell. SagaRoutes models the assembly site as a separate geographic entity from the Valfell/Kambur landform. Exact geometry is withheld pending a defensible identification of the assembly remains.",
+      "mention_count": 2,
+      "mentions": [
+        {
+          "mention_id": "gunnlaug-pm0010",
+          "passage_id": "gunnlaug-en-c02-p003",
+          "alignment_id": "gunnlaug-a0003",
+          "language_code": "en",
+          "surface_form": "Thing-stead of the Burg-firthers",
+          "mention_role": "destination",
+          "visit_status": "visited",
+          "character_names": [
+            "Thorstein Egilson",
+            "Bergfinn",
+            "Atli"
+          ],
+          "chapter_number": 2,
+          "chapter_title": "Of Thorstein's Dream",
+          "passage_type": "prose",
+          "sequence_in_document": 6,
+          "text": "One day in spring-tide Thorstein asked Bergfinn if he would ride with him up to Hawkfell, where at that time was the Thing-stead of the Burg-firthers; for Thorstein had been told that the walls of his booth had fallen in. The Eastman said he had good will to go, so that day they rode, some three together, from home, and the house-carles of Thorstein withal, till they came up under Hawkfell to a farmstead called Foxholes. There dwelt a man of small wealth called Atli, who was Thorstein's tenant. Thorstein bade him come and work with them, and bring with him hoe and spade. This he did, and when they came to the tofts of the booth, they set to work all of them, and did out the walls.",
+          "editorial_note": "The English translation explicitly identifies the Thing-stead of the Burg-firthers beneath Hawkfell. The party ultimately reaches the associated booth remains after recruiting Atli."
+        },
+        {
+          "mention_id": "gunnlaug-pm0009",
+          "passage_id": "gunnlaug-on-c02-p003",
+          "alignment_id": "gunnlaug-a0003",
+          "language_code": "on",
+          "surface_form": "þingstöð þeira Borgfirðinga",
+          "mention_role": "destination",
+          "visit_status": "visited",
+          "character_names": [
+            "Þorsteinn Egilsson",
+            "Bergfinnr",
+            "Atli"
+          ],
+          "chapter_number": 2,
+          "chapter_title": "Draumr Þorsteins Egilssonar.",
+          "passage_type": "prose",
+          "sequence_in_document": 6,
+          "text": "Um várit einn dag ræddi Þorsteinn um við Bergfinn, ef hann vildi ríða með honum upp undir Valfell. Þar var þá þingstöð þeira Borgfirðinga. En Þorsteini var sagt, at fallnir væri búðarveggir hans. Austmaðrinn kveðst þat vilja, ok riðu þeir heiman of daginn þrír saman ok húskarl Þorsteins, þar til er þeir koma til bæjar þess, er at Grenjum heitir. Þar bjó einn maðr félítill, er Atli hét. Hann var landseti Þorsteins, ok beiddi Þorsteinn Atla, at hann færi til starfs með þeim ok hefði pál ok reku. Hann gerði svá. Ok er þeir koma upp undir Valfell til búðartóftanna, þá tóku þeir til starfs allir ok færðu út veggina. Veðrit var heitt af sólu, ok varð þeim Þorsteini ok Austmanni erfitt.",
+          "editorial_note": "The passage explicitly identifies the Borgfirðingar assembly site beneath Valfell. The party ultimately reaches the associated booth remains after recruiting Atli at Grenjar."
+        }
+      ]
+    },
     {
       "id": "gunnlaug-place-gufuaros",
       "preferred_name": "Gufuárós",

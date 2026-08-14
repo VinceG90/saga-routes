@@ -29,7 +29,7 @@
       "journey_id": "gunnlaug-journey-valfell-booth-repair",
       "sequence": 2,
       "origin_place_id": "gunnlaug-place-grenjar",
-      "destination_place_id": "gunnlaug-place-valfell",
+      "destination_place_id": "gunnlaug-place-borgfirdingar-assembly-site-valfell",
       "participant_ids": [
         "gunnlaug-character-thorsteinn-egilsson",
         "gunnlaug-character-bergfinnr",
@@ -44,7 +44,7 @@
       "route_classification": "explicit",
       "spatial_display_status": "unmapped",
       "geometry": null,
-      "editorial_note": "After recruiting Atli at Grenjar, the party continues to the booth remains beneath Valfell. The travel relationship is explicit, although the precise route and destination coordinates remain unresolved."
+      "editorial_note": "After recruiting Atli at Grenjar, the party continues to the Borgfirðingar assembly site and booth remains beneath Valfell. The travel relationship is explicit. SagaRoutes models the assembly site as the journey destination separately from the Valfell/Kambur landform; precise route and destination coordinates remain unresolved."
     }
   ]
 }

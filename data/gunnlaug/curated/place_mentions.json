@@ -126,6 +126,40 @@
         "Bergfinn"
       ],
       "editorial_note": "The translation renders Grenjar as Foxholes."
+    },
+    {
+      "id": "gunnlaug-pm0009",
+      "place_id": "gunnlaug-place-borgfirdingar-assembly-site-valfell",
+      "passage_id": "gunnlaug-on-c02-p003",
+      "alignment_id": "gunnlaug-a0003",
+      "language_code": "on",
+      "surface_form": "þingstöð þeira Borgfirðinga",
+      "mention_role": "destination",
+      "visit_status": "visited",
+      "locator_method": "manual_passage_review",
+      "character_names": [
+        "Þorsteinn Egilsson",
+        "Bergfinnr",
+        "Atli"
+      ],
+      "editorial_note": "The passage explicitly identifies the Borgfirðingar assembly site beneath Valfell. The party ultimately reaches the associated booth remains after recruiting Atli at Grenjar."
+    },
+    {
+      "id": "gunnlaug-pm0010",
+      "place_id": "gunnlaug-place-borgfirdingar-assembly-site-valfell",
+      "passage_id": "gunnlaug-en-c02-p003",
+      "alignment_id": "gunnlaug-a0003",
+      "language_code": "en",
+      "surface_form": "Thing-stead of the Burg-firthers",
+      "mention_role": "destination",
+      "visit_status": "visited",
+      "locator_method": "manual_passage_review",
+      "character_names": [
+        "Thorstein Egilson",
+        "Bergfinn",
+        "Atli"
+      ],
+      "editorial_note": "The English translation explicitly identifies the Thing-stead of the Burg-firthers beneath Hawkfell. The party ultimately reaches the associated booth remains after recruiting Atli."
     }
   ]
 }

@@ -229,14 +229,13 @@
             }
           },
           "destination": {
-            "id": "gunnlaug-place-valfell",
-            "preferred_name": "Valfell",
+            "id": "gunnlaug-place-borgfirdingar-assembly-site-valfell",
+            "preferred_name": "Borgfirðingar assembly site beneath Valfell",
             "alternate_names": [
-              "Hawkfell",
-              "Kambur",
-              "Kamburinn"
+              "Borgfirðingar þingstöð",
+              "Thing-stead of the Burg-firthers"
             ],
-            "feature_type": "landform",
+            "feature_type": "assembly_site",
             "identification_status": "probable",
             "spatial_certainty": "low",
             "has_geometry": false,
@@ -323,7 +322,7 @@
           "spatial_display_status": "unmapped",
           "has_geometry": false,
           "geometry": null,
-          "editorial_note": "After recruiting Atli at Grenjar, the party continues to the booth remains beneath Valfell. The travel relationship is explicit, although the precise route and destination coordinates remain unresolved."
+          "editorial_note": "After recruiting Atli at Grenjar, the party continues to the Borgfirðingar assembly site and booth remains beneath Valfell. The travel relationship is explicit. SagaRoutes models the assembly site as the journey destination separately from the Valfell/Kambur landform; precise route and destination coordinates remain unresolved."
         }
       ],
       "editorial_note": "The journey begins at Þorsteinn's home, understood from the surrounding narrative to be Borg. The travelers stop at Grenjar to recruit Atli and then continue to the assembly-site remains beneath Valfell."
